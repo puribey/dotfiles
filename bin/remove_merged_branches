@@ -1,0 +1,19 @@
+#! /bin/bash
+
+# Remove merged branches
+# This utility is used to remove locally and remote every merged branch of a git project.
+# HANDLE WITH CARE
+#
+# by Sergio Rafael Gianazza
+# github.com/gianu
+
+set -e
+
+main() {
+  for branch_name in `git br --merged | grep -v '*'`; do
+    echo "Find the merged branch ${branch_name}, proceding to delete locally and remote"
+    remove_git_branch ${branch_name}
+  done
+}
+
+main

@@ -1,0 +1,59 @@
+#! /bin/bash
+
+# Remove git branch
+#
+# This utility is used to remove local and remote branch of git repository.
+#
+# by Sergio Rafael Gianazza
+# github.com/gianu
+
+set -e
+
+branch=$1
+force=$2
+
+main() {
+  delete_option="-d"
+  if [ ! -z "$force" ]; then
+    if [ "$force" == "--force" ]; then
+      echo " => Forcing remove of local branch"
+      delete_option="-D"
+    else
+      print_help
+      exit 1
+    fi 
+  fi
+
+  if [ -z "$branch" ]; then
+    print_help
+    exit 1
+  else
+    echo "Removing local branch ${branch}"
+    git br ${delete_option} ${branch}
+    remove_local=$?
+    if [ $remove_local -eq 0 ]; then
+      echo "done."
+      echo "Removing remote branch ${branch}"
+      git push origin :$branch > /dev/null
+      remove_remote=$?
+      if [ $remove_remote -eq 0 ]; then
+        echo "done."
+      else
+        echo "There was a problem removing remote branch ${branch}"
+      fi
+    else
+      echo "There was a problem removing local branch ${branch}"
+    fi
+  fi
+}
+
+print_help() {
+  echo "Remove local and remote branch"
+  echo ""
+  echo " usage: `basename $0` <branch_name> [--force]"
+  echo ""
+  echo "where <branch_name> is the name of your branch."
+  echo "      [--force] param to set a Force deletion of local branch."
+}
+
+main

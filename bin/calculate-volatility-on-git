@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# This script calculate the volatility over the files of a given project
+#
+# This came from Gianu's dotfile: 
+# https://github.com/gianu/dotfiles
+#
+# Example Usage:
+# $ calculate-volatility-on-git <initial-rev> <end-rev>
+
+set -e
+
+initial_rev=$1
+end_rev=$2
+
+prev_rev=$initial_rev
+
+main() {
+  if [ "$initial_rev" ]; then
+    if [ $initial_rev == "-h" -o $initial_rev == "--help" ]; then
+      print_help
+      exit
+    fi
+  fi
+  run_calculate
+}
+
+run_calculate() {
+  diffs=""
+  range=$(get_rev_range)
+  revs=`git rev-list --reverse ${range}`
+  total_revs=`echo ${revs} | wc -w`
+  rev_count=0
+
+  for rev in $revs; do
+    rev_count=`expr $rev_count + 1`
+    echo "Analizing commit: ${rev_count} of ${total_revs} ($[${rev_count} * 100 / ${total_revs}]%)"
+    
+    if [ $rev_count == "1" ]; then
+      continue;
+    fi
+    diff=`git diff --name-status ${prev_rev}..${rev} | awk {'print $2'}`
+    diffs="${diffs} ${diff}"
+    prev_rev=$rev
+  done
+  echo ${diffs} | tr ' ' '\n' | sort | uniq -c | sort -rn > volatility-results.txt
+
+  done_message
+}
+
+function get_rev_range() {
+  actual_branch=`git br | grep "*" | awk {'print $2'}`
+  if [ -z "$initial_rev" ]; then
+    echo "${actual_branch}"
+  else
+    if [ -z "$end_rev" ]; then
+      echo "${initial_rev}..${actual_branch}"
+    else
+      echo "${initial_rev}..${end_rev}"
+    fi
+  fi
+}
+
+done_message() {
+  echo "-------------------------------------------------------------"
+  echo " The process is finished. You can see the results in the file"
+  echo " volatility-results.txt"
+  echo "-------------------------------------------------------------"
+}
+
+print_help() {
+  echo "Calculate Volatility v 0.0.1"
+  echo ""
+  echo "This program calculates the volatility of the files of a project"
+  echo "To run this program write: "
+  echo "calculate-volatility-on-git <initial_rev> <final_rev>"
+  echo "Both <initial_rev> and <final_rev> are optionals."
+}
+
+main

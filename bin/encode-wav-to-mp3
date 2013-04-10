@@ -1,0 +1,5 @@
+#! /bin/sh
+
+file="$1"
+
+/usr/local/bin/lame -V 0 -q 0 "$file"
