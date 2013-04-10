@@ -142,7 +142,7 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-":set t_Co=256
+:set t_Co=256
 syntax enable
 :let g:zenburn_high_Contrast=1
 :colors zenburn
@@ -156,7 +156,6 @@ set statusline=%F%m%r%h%w\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3
 " MISC KEY MAP
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set clipboard=unnamed
-" map <leader>y "*y
 vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 nmap <leader>y :call setreg("\"", system("pbpaste"))<CR>p
 

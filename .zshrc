@@ -3,10 +3,6 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# clean is a good one, philips is another one, risto
-#ZSH_THEME="mrtazz" #"robbyrussell"
 ZSH_THEME="gianu"
 
 # Example aliases
@@ -37,10 +33,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:${PATH}
-#export PATH="$PATH:~/.gem/ruby/1.8/bin"
 
 export PATH=$PATH:/usr/local/pgsql/bin
-#export PATH=$PATH:/Library/PostgreSQL/8.3/bin
 
 #export TERM='xterm-color'
 #export TERM='xterm-256color'
@@ -79,8 +73,6 @@ function whodoneit() {
 }
 
 function topcommiters() {
-  #echo "$(git log --pretty=format:%aN | sort | uniq -c | sort -rn
-  #)"
   echo "$(git shortlog -sn)"
 }
 
