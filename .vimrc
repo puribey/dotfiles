@@ -143,12 +143,7 @@ augroup END
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ":set t_Co=256
-":set background=dark
-":color gianu256
 syntax enable
-"set background=light
-"let g:solarized_visibility="low"
-"color solarized
 :let g:zenburn_high_Contrast=1
 :colors zenburn
 
