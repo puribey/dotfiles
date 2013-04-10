@@ -37,7 +37,7 @@
 /.ssh
 /.subversion
 /.vim/.netrwhist
-/.vim/bundle
+/.vim/bundle/*
 !/.vim/bundle/vundle
 /.vim-tmp
 /.viminfo
