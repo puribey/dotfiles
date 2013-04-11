@@ -417,7 +417,7 @@ command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>r :call RunCurrentFile()<cr>
 
-function RunCurrentFile()
+function! RunCurrentFile()
   if &filetype =~ 'coffee'
     exec ":w\|:!coffee " . expand('%')
   endif
@@ -430,3 +430,6 @@ endfunction
 
 " Find non-printable characters
 map <leader>nc :/[^ -~\t]\+<cr>
+" Edit .vimrc file
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
