@@ -1,9 +1,6 @@
-" This is GiaNU's Vim Configuration, based on Gary Bernhardt's configuration
+" This is GiaNU's Vim Configuration
 " vim:set ts=2 sts=2 sw=2 expandtab:
 "
-"call pathogen#helptags()
-"call pathogen#runtime_append_all_bundles()
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,11 +76,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles
-Bundle 'scrooloose/nerdtree'
 Bundle 'tsaleh/vim-align'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
@@ -95,10 +90,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'duwanis/tomdoc.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'reusee/vim.rust'
-
-" Bundle 'git://git.wincent.com/command-t.git'
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMD
@@ -120,7 +111,7 @@ augroup vimrcEx
     \   exe "normal g`\"" |
     \ endif
 
-  " for Ruby, autoindent with two spaces, always expand tabs
+  " Autoindent with two spaces, always expand tabs.
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
 
@@ -136,7 +127,7 @@ augroup vimrcEx
   autocmd! FileType mkd setlocal syn=off
 
   " Remove Trailing whitespace
-  autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call StripTrailingWhitespaces()
+  autocmd FileType c,cpp,java,php,ruby,python,javascript autocmd BufWritePre <buffer> :call StripTrailingWhitespaces()
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

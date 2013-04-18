@@ -2,12 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="gianu"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -26,18 +21,22 @@ ZSH_THEME="gianu"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git pow bundler)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:${PATH}
+export NODE_PATH=/usr/local/lib/node_modules
+export JAVA_HOME=/Library/Java/jdk
+export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
 
-export PATH=$PATH:/usr/local/pgsql/bin
+export PATH=/usr/local/bin:${PATH}:/usr/local/pgsql/bin:$RBX_ROOT/1.9/bin
+export PATH=/Users/gianu/.cabal/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 #export TERM='xterm-color'
-#export TERM='xterm-256color'
+export TERM='xterm-256color'
 
 #aliases
 alias ls='ls -G'
@@ -51,6 +50,10 @@ export GREP_OPTIONS="--color"
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
+
+export EDITOR=vi
+
+export ACK_COLOR_MATCH='red'
 
 #export PYTHONDONTWRITEBYTECODE=1
 
@@ -76,14 +79,6 @@ function topcommiters() {
   echo "$(git shortlog -sn)"
 }
 
-export PATH=/Users/gianu/.cabal/bin:$PATH
-
-export PATH=$HOME/.rbenv/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export NODE_PATH=/usr/local/lib/node_modules
-export JAVA_HOME=/Library/Java/jdk
-export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
-export PATH=$PATH:$RBX_ROOT/1.9/bin
 
 # This fix an issue with the mysql2 gem
 #export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
