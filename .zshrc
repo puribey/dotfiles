@@ -42,6 +42,7 @@ export TERM='xterm-256color'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias sr='screen -r'
+alias t="script/test $*"
 
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
