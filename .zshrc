@@ -26,7 +26,6 @@ plugins=(git pow bundler)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export NODE_PATH=/usr/local/lib/node_modules
 export JAVA_HOME=/Library/Java/jdk
 export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
 
