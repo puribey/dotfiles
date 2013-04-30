@@ -53,7 +53,6 @@ syntax on
 " Also load indent files, to automatically do language-dependent indenting.
 " GiaNU: There is a problem if don't turn off first the filetype. FIX!!
 filetype off
-filetype plugin indent on
 " Use emacy-style tab completion when selection file, etc.
 " If I want to show $ at the end of the line, wildmode=longest,list
 set wildmode=list:longest,full
@@ -91,6 +90,7 @@ Bundle 'duwanis/tomdoc.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
 
+filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMD
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,7 +115,7 @@ augroup vimrcEx
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
 
-  autocmd! BufRead, BufNewfile *.sass setfiletype sass
+  autocmd! BufRead, BufNewfile *.sass set filetype sass
 
   autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:&gt;
