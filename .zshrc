@@ -30,9 +30,11 @@ export JAVA_HOME=/Library/Java/jdk
 export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
 
 export PATH=/usr/local/bin:${PATH}:/usr/local/pgsql/bin:$RBX_ROOT/1.9/bin
+#export PATH=/usr/local/bin:${PATH}:/usr/local/pgsql/bin
 export PATH=/Users/gianu/.cabal/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$PATH:/usr/local/sbin
 
 #export TERM='xterm-color'
 export TERM='xterm-256color'
@@ -42,6 +44,7 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias sr='screen -r'
 alias t="script/test $*"
+alias gpoc="git push origin $(current_branch)"
 
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
@@ -85,7 +88,7 @@ function topcommiters() {
 eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
-##export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
 
 if [[ -s $HOME/.nvm ]]; then 
   setopt nullglob 

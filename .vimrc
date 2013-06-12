@@ -89,6 +89,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'duwanis/tomdoc.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'FredKSchott/CoVim'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
