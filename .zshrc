@@ -36,7 +36,6 @@ export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
 
-#export TERM='xterm-color'
 export TERM='xterm-256color'
 
 #aliases
