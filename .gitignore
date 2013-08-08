@@ -25,6 +25,7 @@
 /.netrc
 /.npm
 /.nvm
+/.phantomjs
 /.pgpass
 /.pip
 /.pow
@@ -46,6 +47,7 @@
 /Documents
 /Downloads
 /Dropbox
+/Copy
 /Library/*
 /Movies
 /Music
@@ -55,3 +57,5 @@
 /work
 /podcast
 /sessions
+pgadmin.log
+.pgadmin_histoqueries

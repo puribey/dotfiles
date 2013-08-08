@@ -14,7 +14,7 @@ ZSH_THEME="gianu"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -81,6 +81,9 @@ function topcommiters() {
   echo "$(git shortlog -sn)"
 }
 
+function chtitle() {
+  echo -ne "\e]1;${1}\a"
+}
 
 # This fix an issue with the mysql2 gem
 #export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
