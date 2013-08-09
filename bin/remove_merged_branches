@@ -10,8 +10,8 @@
 main() {
   for branch_name in `git br --merged | grep -v '*'`; do
     echo "Find the merged branch ${branch_name}, proceding to delete locally and remote"
-    remove_git_branch ${branch_name}
+    remove_git_branch "$@" ${branch_name}
   done
 }
 
-main
+main "$@"
