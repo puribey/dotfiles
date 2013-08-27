@@ -78,17 +78,18 @@ Bundle 'gmarik/vundle'
 Bundle 'tsaleh/vim-align'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-liquid'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'ecomba/vim-ruby-refactoring'
+"Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'edsono/vim-matchit'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'duwanis/tomdoc.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'nono/vim-handlebars'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,7 +122,10 @@ augroup vimrcEx
   autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:&gt;
 
   " Indent p tags
-  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
+  if !exists("g:html_indent_tags")
+    let g:html_indent_tags=""
+  endif
+  autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd\|nav\|section' | endif
 
   " Don't syntax highight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
