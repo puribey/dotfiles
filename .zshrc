@@ -24,7 +24,14 @@ export TERM='xterm-256color'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias sr='screen -r'
-alias t="script/test $*"
+alias be='bundle exec'
+t() {
+  if [-e script/test]; then
+    script/test $*
+  else
+    rspec --color spec
+  fi
+}
 
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
