@@ -26,7 +26,7 @@ alias ll='ls -lG'
 alias sr='screen -r'
 alias be='bundle exec'
 t() {
-  if [-e script/test]; then
+  if [ -e script/test ]; then
     script/test $*
   else
     rspec --color spec
