@@ -25,6 +25,7 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias sr='screen -r'
 alias be='bundle exec'
+alias a='script/test_all'
 t() {
   if [ -e script/test ]; then
     script/test $*
