@@ -22,11 +22,13 @@
 /.m2
 /.memegen
 /.mindterm
+/.mutt
 /.mysql_history
 /.netbeans-derby
 /.netrc
 /.npm
 /.nvm
+/.offlineimap
 /.phantomjs
 /.pgpass
 /.pip
@@ -50,6 +52,7 @@
 /Downloads
 /Dropbox
 /Copy
+/Gmail
 /Library/*
 /Movies
 /Music
