@@ -88,7 +88,8 @@ Bundle 'edsono/vim-matchit'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'duwanis/tomdoc.vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'kien/ctrlp.vim'
+" Bundle 'kien/ctrlp.vim'
+Bundle 'wincent/Command-T'
 Bundle 'nono/vim-handlebars'
 Bundle 'altercation/vim-colors-solarized'
 
@@ -142,8 +143,9 @@ augroup END
 syntax enable
 " :let g:zenburn_high_Contrast=1
 " :colors zenburn
-set background=light
-colorscheme solarized
+:set background=light
+" colorscheme solarized
+:color solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
@@ -285,8 +287,9 @@ nnoremap <leader>ri :call InlineVariable()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS AND CONFIGURATION TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "use the silver searcher (brews install the_silver_searcher)
-let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore vendor/bundle -g ""'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore vendor/bundle -g ""'
 
 map <leader>gr :topleft :split config/routes.rb<cr>
 function! ShowRoutes()
@@ -306,20 +309,32 @@ function! ShowRoutes()
   :normal dd
 endfunction
 map <leader>gR :call ShowRoutes()<cr>
-map <leader>cc :CtrlPClearCache<cr>
+" map <leader>cc :CtrlPClearCache<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>gv :CtrlP app/views<cr>
-map <leader>gc :CtrlP app/controllers<cr>
-map <leader>gm :CtrlP app/models<cr>
-map <leader>gh :CtrlP app/helpers<cr>
-map <leader>gl :CtrlP app/lib<cr>
-map <leader>gp :CtrlP public<cr>
-map <leader>gs :CtrlP public/stylesheets/saas<cr>
-map <leader>gf :CtrlP features<cr>
-map <leader>f :CtrlP<cr>
-map <leader>F :CtrlP %%<cr>
-map <leader>gt :CtrlPTag<cr>
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT app/lib<cr>
+map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets/saas<cr>
+map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" USE SELECTA FOR FUZZY SEARCH (https://www.github.com/garybernhardt/selecta
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" function! SelectaCommand(choice_command, vim_command)
+"   try
+"     silent! exec a:vim_command . " " . system(a:choice_command . " | selecta")
+"   catch /Vim:Interrupt/
+"   endtry
+"   redraw!
+" endfunction
+" 
+" map <leader>f :call SelectaCommand("find * -type f", ":e")<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

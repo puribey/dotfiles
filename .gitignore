@@ -65,3 +65,4 @@
 /Talks
 pgadmin.log
 .pgadmin_histoqueries
+.exercism.go
