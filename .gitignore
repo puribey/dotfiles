@@ -8,6 +8,7 @@
 /.argouml
 /.bundle
 /.cache
+/.cask
 /.cups
 /.dropbox
 /.fontconfig
@@ -37,6 +38,7 @@
 /.psql_history
 /.rbenv
 /.rbx
+/.rediscli_history
 /.rnd
 /.sqlite_history
 /.ssh
