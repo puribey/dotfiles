@@ -81,3 +81,7 @@ fi
 
 # Rubinius Options
 export RBXOPT=-X19
+
+# Virtualenvwrapper configuration
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh

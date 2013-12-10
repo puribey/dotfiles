@@ -25,6 +25,7 @@
 /.mindterm
 /.mutt
 /.mysql_history
+/Meetup.js
 /.netbeans-derby
 /.netrc
 /.npm
@@ -48,6 +49,7 @@
 !/.vim/bundle/vundle
 /.vim-tmp
 /.viminfo
+/.virtualenvs
 /.zcompdump
 /Desktop
 /Documents
