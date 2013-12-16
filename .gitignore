@@ -44,6 +44,7 @@
 /.sqlite_history
 /.ssh
 /.subversion
+/.vagrant.d
 /.vim/.netrwhist
 /.vim/bundle/*
 !/.vim/bundle/vundle
@@ -70,3 +71,4 @@
 pgadmin.log
 .pgadmin_histoqueries
 .exercism.go
+dump.rdb
