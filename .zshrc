@@ -11,6 +11,7 @@ DISABLE_AUTO_TITLE="true"
 export JAVA_HOME=/Library/Java/jdk
 export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
 export PYTHON_HOME=/usr/local/Cellar/python/2.7.6
+export MVN_HOME=/usr/local/apache-maven-3.1.1/
 
 export PATH=/usr/local/bin:${PATH}:/usr/local/pgsql/bin:$RBX_ROOT/1.9/bin
 export PATH=/Users/gianu/.cabal/bin:$PATH
@@ -18,6 +19,7 @@ export PATH=$HOME/.rbenv/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PYTHON_HOME/bin:$PATH
+export PATH=$PATH:$MVN_HOME/bin
 
 export TERM='xterm-256color'
 

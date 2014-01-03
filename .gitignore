@@ -9,6 +9,7 @@
 /.bundle
 /.cache
 /.cask
+/.config
 /.cups
 /.dropbox
 /.fontconfig
