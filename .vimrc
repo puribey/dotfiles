@@ -9,10 +9,10 @@ set nocompatible
 set hidden
 " Remember more commands and search history
 set history=1000
-set expandtab
-set tabstop=2
+set expandtab "Turn tabs into spaces
+set tabstop=2 "Tab = 2 spaces in normal mode
 set shiftwidth=2
-set softtabstop=2
+set softtabstop=2 "Tab = 2 spaces in insert mode
 set autoindent
 set laststatus=2
 set showmatch
@@ -62,6 +62,7 @@ set wildmenu
 set fileencoding=utf-8
 set fileencodings=utf-8
 set encoding=utf-8
+set lazyredraw
 
 let mapleader=","
 
@@ -91,7 +92,11 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'kien/ctrlp.vim'
 " Bundle 'wincent/Command-T'
 Bundle 'nono/vim-handlebars'
-Bundle 'altercation/vim-colors-solarized'
+"Bundle 'altercation/vim-colors-solarized'
+"Bundle 'sjl/badwolf'
+"Bundle 'tomasr/molokai'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,16 +146,13 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256
 syntax enable
-" :let g:zenburn_high_Contrast=1
-" :colors zenburn
-:set background=light
-" colorscheme solarized
-:color solarized
+:set background=dark
+colorscheme Tomorrow-Night-Bright
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=%F%m%r%h%w\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%)
+"set statusline=%F%m%r%h%w\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAP
