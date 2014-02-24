@@ -147,7 +147,8 @@ augroup END
 :set t_Co=256
 syntax enable
 :set background=dark
-colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Bright
+colorscheme Tomorrow-Night
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE

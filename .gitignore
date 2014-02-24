@@ -12,6 +12,7 @@
 /.config
 /.cups
 /.dropbox
+/.dropbox-master
 /.fontconfig
 /.fonts
 /.freemind
@@ -30,6 +31,7 @@
 /.netbeans-derby
 /.netrc
 /.npm
+/.node-gyp
 /.nvm
 /.offlineimap
 /.phantomjs
@@ -62,6 +64,7 @@
 /Library/*
 /Movies
 /Music
+/papers
 /Pictures
 /Public
 /play
