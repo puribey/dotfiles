@@ -20,6 +20,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PYTHON_HOME/bin:$PATH
 export PATH=$PATH:$MVN_HOME/bin
+export PATH=$PATH:/Library/SDK/PebbleSDK-2.0.2/bin
 
 export TERM='xterm-256color'
 
@@ -76,10 +77,10 @@ eval "$(rbenv init -)"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-if [[ -s $HOME/.nvm ]]; then 
-  setopt nullglob 
-  NVM_DIR=$HOME/.nvm 
-  source $NVM_DIR/nvm.sh 
+if [[ -s $HOME/.nvm ]]; then
+  setopt nullglob
+  NVM_DIR=$HOME/.nvm
+  source $NVM_DIR/nvm.sh
 fi
 
 # Rubinius Options
