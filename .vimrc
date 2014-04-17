@@ -247,13 +247,13 @@ function! ExtractVariable()
   if name == ''
     return
   endif
-  
+
   " Enter visual mode
   normal! gv
 
   " Replace selected text with the variable name
   exec "normal c" . name
-  " Define the variable on the line above 
+  " Define the variable on the line above
   exec "normal! O" . name . " = "
   " Paste the original selected text to be the variable value
   normal! $p
@@ -433,7 +433,7 @@ endfunction
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MISC COMMANDS 
+" MISC COMMANDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Find non-printable characters
