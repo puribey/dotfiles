@@ -6,9 +6,11 @@
 /.android
 /.ardour2
 /.argouml
+/.atom
 /.bundle
 /.cache
 /.cask
+/.cocoapods
 /.config
 /.cups
 /.dropbox
