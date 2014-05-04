@@ -75,6 +75,7 @@
 /podcast
 /sessions
 /Talks
+/VirtualBox VMs
 pgadmin.log
 .pgadmin_histoqueries
 .exercism.go
