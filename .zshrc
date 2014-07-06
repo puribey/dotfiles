@@ -77,12 +77,6 @@ eval "$(rbenv init -)"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-if [[ -s $HOME/.nvm ]]; then
-  setopt nullglob
-  NVM_DIR=$HOME/.nvm
-  source $NVM_DIR/nvm.sh
-fi
-
 # Rubinius Options
 export RBXOPT=-X19
 
