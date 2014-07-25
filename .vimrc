@@ -65,12 +65,13 @@ set encoding=utf-8
 set lazyredraw
 
 let mapleader=","
+let maplocalleader=","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LOAD Vundler
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Let Vundle manage Vundle
 Plugin 'gmarik/vundle'
@@ -83,6 +84,7 @@ Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
 Plugin 'vim-ruby/vim-ruby'
 "Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'edsono/vim-matchit'
@@ -98,6 +100,9 @@ Plugin 'nono/vim-handlebars'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'bling/vim-airline'
 Plugin 'skalnik/vim-vroom'
+Plugin 'jceb/vim-orgmode'
+
+call vundle#end()
 
 filetype plugin indent on
 
@@ -153,7 +158,7 @@ syntax enable
 " colorscheme Tomorrow-Night-Bright
 colorscheme Tomorrow-Night
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set statusline=%F%m%r%h%w\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%)
@@ -315,7 +320,7 @@ function! ShowRoutes()
   :normal dd
 endfunction
 map <leader>gR :call ShowRoutes()<cr>
-map <leader>cc :CtrlPClearCache<cr>
+map <leader>cpc :CtrlPClearCache<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 " map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gv :CtrlP app/views<cr>
@@ -412,3 +417,4 @@ map <leader>nc :/[^ -~\t]\+<cr>
 " Edit .vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>om :vsplit /Users/gianu/Dropbox/Personal/personal_organization.org<cr>

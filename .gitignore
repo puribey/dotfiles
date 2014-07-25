@@ -8,6 +8,7 @@
 /.argouml
 /.atom
 /.bundle
+/.cabal
 /.cache
 /.cask
 /.cocoapods
