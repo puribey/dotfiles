@@ -100,7 +100,7 @@ Plugin 'nono/vim-handlebars'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'bling/vim-airline'
 Plugin 'skalnik/vim-vroom'
-Plugin 'jceb/vim-orgmode'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 
@@ -320,7 +320,7 @@ function! ShowRoutes()
   :normal dd
 endfunction
 map <leader>gR :call ShowRoutes()<cr>
-map <leader>cpc :CtrlPClearCache<cr>
+map <leader>cc :CtrlPClearCache<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 " map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gv :CtrlP app/views<cr>
@@ -417,4 +417,3 @@ map <leader>nc :/[^ -~\t]\+<cr>
 " Edit .vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>om :vsplit /Users/gianu/Dropbox/Personal/personal_organization.org<cr>
