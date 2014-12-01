@@ -50,6 +50,8 @@
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
   tool = vimdiff
+[core]
+  editor = /usr/bin/vim
 [i18n]
 	logOutputEncoding = UTF-8
 	commitencoding = UTF-8

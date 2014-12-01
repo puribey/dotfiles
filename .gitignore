@@ -7,6 +7,7 @@
 /.ardour2
 /.argouml
 /.atom
+/.aws
 /.bundle
 /.cabal
 /.cache
@@ -60,10 +61,13 @@
 /.viminfo
 /.virtualenvs
 /.zcompdump
+/Applications
 /Desktop
 /Documents
 /Downloads
 /Dropbox
+/Dropbox (Personal)
+/Dropbox (Avi-On)
 /Copy
 /Gmail
 /Library/*
@@ -78,6 +82,7 @@
 /sessions
 /Talks
 /VirtualBox VMs
+/bin/subl
 pgadmin.log
 .pgadmin_histoqueries
 .exercism.go

@@ -80,6 +80,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Rubinius Options
 export RBXOPT=-X19
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Virtualenvwrapper configuration
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
