@@ -8,6 +8,7 @@
 /.argouml
 /.atom
 /.aws
+/.boot2docker
 /.bundle
 /.cabal
 /.cache
@@ -17,6 +18,8 @@
 /.cups
 /.dropbox
 /.dropbox-master
+/.emacs
+/floobits/
 /.fontconfig
 /.fonts
 /.freemind
@@ -87,3 +90,5 @@ pgadmin.log
 .pgadmin_histoqueries
 .exercism.go
 dump.rdb
+.floorc.json
+.npmrc
