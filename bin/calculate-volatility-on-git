@@ -2,7 +2,7 @@
 
 # This script calculate the volatility over the files of a given project
 #
-# This came from Gianu's dotfile: 
+# This came from Gianu's dotfile:
 # https://github.com/gianu/dotfiles
 #
 # Example Usage:
@@ -35,7 +35,7 @@ run_calculate() {
   for rev in $revs; do
     rev_count=`expr $rev_count + 1`
     echo "Analizing commit: ${rev_count} of ${total_revs} ($[${rev_count} * 100 / ${total_revs}]%)"
-    
+
     if [ $rev_count == "1" ]; then
       continue;
     fi

@@ -16,9 +16,11 @@
 /.cocoapods
 /.config
 /.cups
+/.docker
 /.dropbox
 /.dropbox-master
 /.emacs
+/.emacs.d
 /floobits/
 /.fontconfig
 /.fonts
@@ -83,6 +85,7 @@
 /work
 /podcast
 /sessions
+/Splice
 /Talks
 /VirtualBox VMs
 /bin/subl
@@ -92,3 +95,8 @@ pgadmin.log
 dump.rdb
 .floorc.json
 .npmrc
+.dockercfg
+.dbshell
+.babel.json
+.mongorc.js
+.v8flags.3.14.5.9.gianu.json

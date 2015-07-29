@@ -86,3 +86,5 @@ export LANG=en_US.UTF-8
 # Virtualenvwrapper configuration
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+
+ulimit -n 8192

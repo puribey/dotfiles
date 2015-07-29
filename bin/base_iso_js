@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#Create a basic Isomorphic Javascript application on the current directory
+#
+# Usage: base_iso_js <name_of_project>
+
+set -e
+
+directory=$1
+current=`pwd`
+
+if [ -z "$directory" ]; then
+  echo "Usage: base_iso_js <name_of_project>"
+  exit
+fi
+
+mkdir $directory
+cd $directory
+
+git clone git@github.com:gianu/base_isomorphic_js.git
+cd base_isomorphic_js
+mv * ../
+cd ..
+rm -rf base_isomorphic_js
+npm install
+

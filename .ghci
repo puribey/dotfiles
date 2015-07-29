@@ -1,0 +1,3 @@
+:set +m
+:set prompt "\ESC[31mλ\ESC[m "
+:set prompt2 " | "

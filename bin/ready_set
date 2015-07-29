@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+directory=$1
+
+if [ -z "$directory" ]; then
+  directory=`pwd`
+fi
+
+echo "export GOPATH=$directory"
