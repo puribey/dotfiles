@@ -1,6 +1,11 @@
 ## Help functions
 ##   by gianu
 
+## who did this shit?
+whodunnit () {
+    git ls-tree -r -l --name-only HEAD -- $1 | xargs -n1 git blame --line-porcelain HEAD | grep  "^author " | sed -n 's/^author //p' | grep -v "Not Committed Yet" | sort | uniq -c | sort -nr
+}
+
 ## Get the top commiters of a git repo
 topcommiters() {
   echo "$(git shortlog -sn)"

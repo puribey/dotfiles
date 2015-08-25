@@ -68,41 +68,42 @@ let mapleader=","
 let maplocalleader=","
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LOAD Vundler
+" LOAD Plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-" Let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
 
 " My Bundles
-Plugin 'tsaleh/vim-align'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-liquid'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-speeddating'
-Plugin 'vim-ruby/vim-ruby'
-"Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'edsono/vim-matchit'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'duwanis/tomdoc.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'kien/ctrlp.vim'
-" Plugin 'wincent/Command-T'
-Plugin 'nono/vim-handlebars'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'sjl/badwolf'
-"Plugin 'tomasr/molokai'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'bling/vim-airline'
-Plugin 'skalnik/vim-vroom'
-Plugin 'mattn/emmet-vim'
+Plug 'junegunn/vim-easy-align'
+" Plug 'tsaleh/vim-align'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-liquid'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'vim-ruby/vim-ruby'
+"Plug 'ecomba/vim-ruby-refactoring'
+Plug 'edsono/vim-matchit'
+Plug 'kchmck/vim-coffee-script'
+Plug 'duwanis/tomdoc.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'kien/ctrlp.vim'
+" Plug 'wincent/Command-T'
+Plug 'nono/vim-handlebars'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'sjl/badwolf'
+"Plug 'tomasr/molokai'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'bling/vim-airline'
+Plug 'skalnik/vim-vroom'
+Plug 'mattn/emmet-vim'
+Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 
@@ -357,9 +358,9 @@ map <leader>gl :CtrlP app/lib<cr>
 map <leader>gp :CtrlP public<cr>
 map <leader>gs :CtrlP public/stylesheets/saas<cr>
 map <leader>gf :CtrlP features<cr>
-map <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
-" map <leader>f :CtrlP<cr>
-" map <leader>F :CtrlP %%<cr>
+" map <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
+map <leader>f :CtrlP<cr>
+map <leader>F :CtrlP %%<cr>
 map <leader>gt :CtrlPTag<cr>
 map <leader>b :call SelectaBuffer()<cr>
 
@@ -445,3 +446,13 @@ map <leader>nc :/[^ -~\t]\+<cr>
 " Edit .vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ALIGNMENT COMMANDS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:easy_align_delimiters = {'f': { 'pattern': 'from' } }
+
+vmap <Enter> <Plug>(EasyAlign)
+
+nmap ga <Plug>(EasyAlign)
+

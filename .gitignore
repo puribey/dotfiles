@@ -19,6 +19,7 @@
 /.docker
 /.dropbox
 /.dropbox-master
+/.elm
 /.emacs
 /.emacs.d
 /floobits/
@@ -63,6 +64,7 @@
 /.vim/bundle/*
 !/.vim/bundle/vundle
 /.vim-tmp
+/.vim/plugged
 /.viminfo
 /.virtualenvs
 /.zcompdump
