@@ -362,7 +362,7 @@ map <leader>gf :CtrlP features<cr>
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>gt :CtrlPTag<cr>
-map <leader>b :call SelectaBuffer()<cr>
+" map <leader>b :call SelectaBuffer()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
