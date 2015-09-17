@@ -102,3 +102,4 @@ dump.rdb
 .babel.json
 .mongorc.js
 .v8flags.3.14.5.9.gianu.json
+.zsh_history

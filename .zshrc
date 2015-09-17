@@ -1,56 +1,106 @@
-setopt PROMPT_SUBST
-autoload -U promptinit help_funcs
-promptinit
-help_funcs
-prompt gianu
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/gianu/.oh-my-zsh
 
-# Uncomment following line if you want to disable autosetting terminal title.
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+# ZSH_THEME="gianu"
+ZSH_THEME="agnoster"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
-# Customize to your needs...
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(gitfast osx)
+
+# User configuration
+
+export PATH="/usr/local/heroku/bin:/Users/gianu/.rbenv/shims:/usr/local/Cellar/python/2.7.6/bin:/Users/gianu/bin:/Users/gianu/.rbenv/bin:/Users/gianu/.cabal/bin:/usr/local/bin:/usr/local/heroku/bin:/Users/gianu/.rbenv/shims:/usr/local/Cellar/python/2.7.6/bin:/Users/gianu/bin:/Users/gianu/.rbenv/bin:/Users/gianu/.cabal/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:/usr/local/pgsql/bin:/Users/gianu/.rbenv/versions/rbx-2.0.0-dev/1.9/bin:/usr/local/sbin:/usr/local/apache-maven-3.1.1//bin:/Library/SDK/PebbleSDK-2.0.2/bin:/usr/local/pgsql/bin:/Users/gianu/.rbenv/versions/rbx-2.0.0-dev/1.9/bin:/usr/local/sbin:/usr/local/apache-maven-3.1.1//bin:/Library/SDK/PebbleSDK-2.0.2/bin"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Personal configuration
 export JAVA_HOME=/Library/Java/jdk
 export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
 export PYTHON_HOME=/usr/local/Cellar/python/2.7.6
-export MVN_HOME=/usr/local/apache-maven-3.1.1/
 
-export PATH=/usr/local/bin:${PATH}:/usr/local/pgsql/bin:$RBX_ROOT/1.9/bin
-export PATH=/Users/gianu/.cabal/bin:$PATH
-export PATH=$HOME/.rbenv/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PYTHON_HOME/bin:$PATH
-export PATH=$PATH:$MVN_HOME/bin
-export PATH=$PATH:/Library/SDK/PebbleSDK-2.0.2/bin
-
-export TERM='xterm-256color'
-
-#aliases
 alias ls='ls -G'
 alias ll='ls -lG'
 alias sr='screen -r'
-alias be='bundle exec'
-alias a='script/test_all'
-t() {
-  if [ -e script/test ]; then
-    script/test $*
-  else
-    rspec --color spec
-  fi
-}
 
-export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export GREP_OPTIONS="--color"
-
-
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
-export EDITOR=vi
+export EDITOR=vim
 
 export ACK_COLOR_MATCH='red'
-
-#export PYTHONDONTWRITEBYTECODE=1
 
 export WORDCHARS='*?[]~&;!$%^<>'
 
@@ -70,20 +120,11 @@ function whodoneit() {
   )
 }
 
-# This fix an issue with the mysql2 gem
-#export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
-eval "$(rbenv init -)"
-
-### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-# Rubinius Options
-export RBXOPT=-X19
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Virtualenvwrapper configuration
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
