@@ -1,7 +1,7 @@
 *.DS_Store
 /.CFUserTextEncoding
 /.VirtualBox Vms
-/.Trash
+/.T/.Trashrash
 /.adobe
 /.android
 /.ardour2
@@ -75,6 +75,7 @@
 /Dropbox
 /Dropbox (Personal)
 /Dropbox (Avi-On)
+/Dropbox (Amplified)
 /Copy
 /Gmail
 /Library/*

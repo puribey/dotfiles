@@ -5,8 +5,8 @@ export ZSH=/Users/gianu/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gianu"
-# ZSH_THEME="agnoster"
+# ZSH_THEME="gianu"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -92,6 +92,9 @@ export PYTHON_HOME=/usr/local/Cellar/python/2.7.6
 alias ls='ls -G'
 alias ll='ls -lG'
 alias sr='screen -r'
+
+#Kaizoku alias
+alias pb='kaizoku'
 
 export GREP_OPTIONS="--color"
 export HISTSIZE=100000
