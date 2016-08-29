@@ -90,7 +90,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'duwanis/tomdoc.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'kien/ctrlp.vim'
-" Plug 'wincent/Command-T'
+Plug 'wincent/Command-T'
 Plug 'nono/vim-handlebars'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'sjl/badwolf'
@@ -100,8 +100,14 @@ Plug 'bling/vim-airline'
 Plug 'skalnik/vim-vroom'
 Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
+Plug 'fsharp/vim-fsharp', {
+      \ 'for': 'fsharp',
+      \ 'do': 'make fsautocomplete',
+      \}
 
 call plug#end()
 
@@ -360,6 +366,7 @@ map <leader>gs :CtrlP public/stylesheets/saas<cr>
 map <leader>gf :CtrlP features<cr>
 " map <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
 map <leader>f :CtrlP<cr>
+" map <leader>f :CommandT<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>gt :CtrlPTag<cr>
 " map <leader>b :call SelectaBuffer()<cr>

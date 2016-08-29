@@ -5,8 +5,8 @@ export ZSH=/Users/gianu/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="gianu"
-ZSH_THEME="agnoster"
+ZSH_THEME="gianu"
+# ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -96,6 +96,9 @@ alias sr='screen -r'
 #Kaizoku alias
 alias pb='kaizoku'
 
+alias weather='curl wttr.in'
+alias moon='curl wttr.in/Moon'
+
 export GREP_OPTIONS="--color"
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
@@ -132,3 +135,8 @@ export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
 ulimit -n 8192
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+export GOPATH=/Users/gianu/work/go
+export PATH=$PATH:${GOPATH}/bin

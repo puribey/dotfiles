@@ -1,4 +1,5 @@
 *.DS_Store
+/Applications (Parallels)
 /.CFUserTextEncoding
 /.VirtualBox Vms
 /.T/.Trashrash
@@ -14,14 +15,22 @@
 /.cache
 /.cask
 /.cocoapods
-/.config
+/.config/NuGet
+/.config/configstore
+/.config/heroku
+/.config/menus
+/.config/xbuild
+/.config/fish/fishd.*
 /.cups
 /.docker
 /.dropbox
 /.dropbox-master
+/.electron
+/.composer
 /.elm
 /.emacs
 /.emacs.d
+/.electrum
 /floobits/
 /.fontconfig
 /.fonts
@@ -30,14 +39,18 @@
 /.ghc
 /.gradle
 /.heroku
+/.hyperterm_plugins
 /.history
+/.iterm2
 /.keepassx
 /.lesshst
+/.local
 /.m2
 /.memegen
 /.mindterm
 /.mutt
 /.mysql_history
+/.nuget
 /Meetup.js
 /.netbeans-derby
 /.netrc
@@ -45,6 +58,7 @@
 /.node-gyp
 /.nvm
 /.offlineimap
+/.oh-my-zsh
 /.pebble
 /.phantomjs
 /.pgpass
@@ -67,6 +81,7 @@
 /.vim/plugged
 /.viminfo
 /.virtualenvs
+/.vscode
 /.zcompdump
 /Applications
 /Desktop
@@ -78,6 +93,7 @@
 /Dropbox (Amplified)
 /Copy
 /Gmail
+/Google Drive
 /Library/*
 /Movies
 /Music
@@ -92,6 +108,7 @@
 /Talks
 /VirtualBox VMs
 /bin/subl
+/bin/match
 pgadmin.log
 .pgadmin_histoqueries
 .exercism.go
@@ -101,6 +118,8 @@ dump.rdb
 .dockercfg
 .dbshell
 .babel.json
+.emulator_console_auth_token
+.iterm2_shell_integration.zsh
 .mongorc.js
 .v8flags.3.14.5.9.gianu.json
 .zsh_history

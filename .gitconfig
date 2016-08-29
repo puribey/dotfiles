@@ -21,7 +21,7 @@
   st = status -sb
   ci = commit --verbose
   co = checkout
-  di = diff
+  d = diff --compaction-heuristic
   dc = diff --cached
   amend = commit --amend
   aa = add --all
