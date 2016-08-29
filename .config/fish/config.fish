@@ -70,3 +70,11 @@ function fish_prompt
   echo -n "]\$ "
 end
 
+# Utility functions
+function chtitle
+  echo -n -e -s "\e]1;$1\a"
+end
+
+function topcommiters
+  echo -n (git shortlog -sn)
+end

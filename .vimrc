@@ -104,6 +104,7 @@ Plug 'othree/yajs.vim'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
+Plug 'dag/vim-fish'
 Plug 'fsharp/vim-fsharp', {
       \ 'for': 'fsharp',
       \ 'do': 'make fsautocomplete',
