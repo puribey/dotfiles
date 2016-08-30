@@ -121,5 +121,5 @@ dump.rdb
 .emulator_console_auth_token
 .iterm2_shell_integration.zsh
 .mongorc.js
-.v8flags.3.14.5.9.gianu.json
+.v8flags.*.gianu.json
 .zsh_history
