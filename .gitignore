@@ -19,6 +19,7 @@
 /.config/configstore
 /.config/heroku
 /.config/menus
+/.config/micro
 /.config/xbuild
 /.config/fish/fishd.*
 /.cups
@@ -70,6 +71,7 @@
 /.rbx
 /.rediscli_history
 /.rnd
+/.rstudio-desktop/
 /.sqlite_history
 /.ssh
 /.subversion
@@ -84,6 +86,7 @@
 /.vscode
 /.zcompdump
 /Applications
+/bin/micro
 /Desktop
 /Documents
 /Downloads

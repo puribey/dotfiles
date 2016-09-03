@@ -48,6 +48,9 @@
   gn = goodness
   gnc = goodness --cached
   fa = fetch --all
+  undo = "!gitundo() { \
+        git reset --hard HEAD\"@{${1-1}}\"; \
+    }; gitundo"
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [merge]
