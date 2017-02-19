@@ -22,6 +22,7 @@
 /.config/micro
 /.config/xbuild
 /.config/fish/fishd.*
+/.config/robomongo
 /.cups
 /.docker
 /.dropbox
@@ -32,6 +33,7 @@
 /.emacs
 /.emacs.d
 /.electrum
+/.exponent
 /floobits/
 /.fontconfig
 /.fonts
@@ -39,8 +41,11 @@
 /.gem
 /.ghc
 /.gradle
+/.Genymobile
+/.hammerspoon
 /.heroku
 /.hyperterm_plugins
+/.hyper_plugins
 /.history
 /.iterm2
 /.keepassx
@@ -49,6 +54,7 @@
 /.m2
 /.memegen
 /.mindterm
+/.mix
 /.mutt
 /.mysql_history
 /.nuget
@@ -57,8 +63,11 @@
 /.netrc
 /.npm
 /.node-gyp
+/.now.json
 /.nvm
 /.offlineimap
+/.ocamlinit
+/.opam
 /.oh-my-zsh
 /.pebble
 /.phantomjs
@@ -69,9 +78,11 @@
 /.psql_history
 /.rbenv
 /.rbx
+/.reasoninit
 /.rediscli_history
 /.rnd
 /.rstudio-desktop/
+/.rtop-history
 /.sqlite_history
 /.ssh
 /.subversion
@@ -84,7 +95,11 @@
 /.viminfo
 /.virtualenvs
 /.vscode
-/.zcompdump
+/.yarn-cache
+/.yarn-config
+/.yarn
+/.yarnrc
+/.zcompdump-*
 /Applications
 /bin/micro
 /Desktop

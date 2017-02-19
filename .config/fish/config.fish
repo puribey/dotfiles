@@ -1,5 +1,7 @@
-set -gx PATH /usr/local/heroku/bin /Users/gianu/.rbenv/shims /Users/gianu/bin /Users/gianu/.cabal/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/git/bin /usr/local/go/bin /usr/local/sbin $PATH
+set -U ANDROID_HOME /Users/gianu/Library/Android/sdk
 
+set -gx PATH /usr/local/heroku/bin /Users/gianu/.rbenv/shims /Users/gianu/bin /Users/gianu/.cabal/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/git/bin /usr/local/go/bin /usr/local/sbin $ANDROID_HOME/tools $ANDROID_HOME/platform-tools $PATH
+ 
 alias ls "ls -G"
 alias ll "ls -lG"
 alias sr "screen -r"
@@ -8,10 +10,12 @@ alias pb "kaizoku"
 
 alias weather "curl wttr.in"
 alias moon "curl wttr.in/Moon"
-
+                          
 set -U GREP_OPTIONS --color
 set -U EDITOR vim
 set -U ACK_COLOR_MATCH red
+
+set -U HOMEBREW_GITHUB_API_TOKEN 6e5635766e43f6eebac0914015da30669a15d7a5 
 
 set -U LC_ALL en_US.UTF-8
 set -U LANG en_US.UTF-8
@@ -70,6 +74,10 @@ function fish_prompt
   set_color normal
   echo -n "]\$ "
 end
+
+eval (opam config env)
+
+. /Users/gianu/.opam/opam-init/init-fish.sh > /dev/null 2> /dev/null or true
 
 # Utility functions
 function chtitle

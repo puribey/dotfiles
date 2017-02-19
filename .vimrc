@@ -35,6 +35,7 @@ set t_ti= t_te=
 set scrolloff=3
 " Store temporary files in a central spot
 set backup
+set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,/var/tmp./tmp
 " Allow backspacing over everything in insert mode
@@ -67,6 +68,30 @@ set lazyredraw
 let mapleader=","
 let maplocalleader=","
 
+:set timeout timeoutlen=1000 ttimeoutlen=100
+
+" Normally, Vim messes with iskeyword when you open a shell file. This can
+" leak out, polluting other files types even after a 'set ft=' change. This
+" variable prevents the iskeyword change so it can't hurt anyone.
+let g:sh_noisk=1
+
+set modeline
+set modelines=3
+
+set foldmethod=manual
+set nofoldenable
+
+" Insert only one space when joining lines that contain sentence-terminating
+" punctuation like `.`.
+set nojoinspaces
+" If a file is changed outside of vim, automatically reload it wihout asking
+set autoread
+
+" Use the old vim regex engine (version 1, as opposed to version 2, which was
+" introduced in Vim 7.3.969). The Ruby syntax highlighting is significantly
+" slower with the new regex engine.
+set re=1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LOAD Plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -74,41 +99,20 @@ let maplocalleader=","
 call plug#begin('~/.vim/plugged')
 
 " My Bundles
-Plug 'junegunn/vim-easy-align'
-" Plug 'tsaleh/vim-align'
-Plug 'tpope/vim-cucumber'
-Plug 'tpope/vim-git'
-Plug 'tpope/vim-liquid'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-speeddating'
-Plug 'vim-ruby/vim-ruby'
-"Plug 'ecomba/vim-ruby-refactoring'
 Plug 'edsono/vim-matchit'
-Plug 'kchmck/vim-coffee-script'
-Plug 'duwanis/tomdoc.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'kien/ctrlp.vim'
-Plug 'wincent/Command-T'
-Plug 'nono/vim-handlebars'
-"Plug 'altercation/vim-colors-solarized'
-"Plug 'sjl/badwolf'
-"Plug 'tomasr/molokai'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'bling/vim-airline'
 Plug 'skalnik/vim-vroom'
 Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
-" Plug 'pangloss/vim-javascript'
-Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'dag/vim-fish'
-Plug 'fsharp/vim-fsharp', {
-      \ 'for': 'fsharp',
-      \ 'do': 'make fsautocomplete',
-      \}
+Plug 'elixir-lang/vim-elixir'
+Plug 'scrooloose/nerdtree'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
@@ -189,6 +193,9 @@ imap <c-c> <esc>
 " Clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
 nnoremap <leader><leader> <c-^>
+
+" Toggle NERDTree
+nnoremap <C-\> :NERDTreeToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -328,31 +335,6 @@ function! ShowRoutes()
   :normal dd
 endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SELECTA CONFIGURATION
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    " Swallow the ^C so that the redraw below happens; otherwise there wil be
-    " leftovers from selecta on the screen
-    redraw!
-    return
-  endtry
-  redraw!
-  exec a:vim_command . " " . selection
-endfunction
-
-function! SelectaBuffer()
-  let bufnrs = filter(range(1, bufnr("$")), 'buflisted(v:val)')
-  let buffers = map(bufnrs, 'bufname(v:val)')
-  call SelectaCommand('echo "' . join(buffers, "\n") . '"', "", ":b")
-endfunction
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" END SELECTA CONFIGURATION
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 map <leader>gR :call ShowRoutes()<cr>
 map <leader>cc :CtrlPClearCache<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
@@ -365,12 +347,10 @@ map <leader>gl :CtrlP app/lib<cr>
 map <leader>gp :CtrlP public<cr>
 map <leader>gs :CtrlP public/stylesheets/saas<cr>
 map <leader>gf :CtrlP features<cr>
-" map <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
 map <leader>f :CtrlP<cr>
 " map <leader>f :CommandT<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>gt :CtrlPTag<cr>
-" map <leader>b :call SelectaBuffer()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
