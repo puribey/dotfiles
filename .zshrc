@@ -54,7 +54,7 @@ plugins=(gitfast osx)
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/Users/gianu/.rbenv/shims:/usr/local/Cellar/python/2.7.6/bin:/Users/gianu/bin:/Users/gianu/.rbenv/bin:/Users/gianu/.cabal/bin:/usr/local/bin:/usr/local/heroku/bin:/Users/gianu/.rbenv/shims:/usr/local/Cellar/python/2.7.6/bin:/Users/gianu/bin:/Users/gianu/.rbenv/bin:/Users/gianu/.cabal/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:/usr/local/pgsql/bin:/Users/gianu/.rbenv/versions/rbx-2.0.0-dev/1.9/bin:/usr/local/sbin:/usr/local/apache-maven-3.1.1//bin:/Library/SDK/PebbleSDK-2.0.2/bin:/usr/local/pgsql/bin:/Users/gianu/.rbenv/versions/rbx-2.0.0-dev/1.9/bin:/usr/local/sbin:/usr/local/apache-maven-3.1.1//bin:/Library/SDK/PebbleSDK-2.0.2/bin"
+export PATH="/usr/local/heroku/bin:/Users/gianu/.rbenv/shims:/usr/local/Cellar/python/2.7.6/bin:/Users/gianu/bin:/Users/gianu/.rbenv/bin:/Users/gianu/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/apache-maven-3.1.1/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -140,3 +140,6 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 
 export GOPATH=/Users/gianu/work/go
 export PATH=$PATH:${GOPATH}/bin
+
+eval `opam config env`
+./Users/gianu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null

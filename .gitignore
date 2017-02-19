@@ -86,6 +86,8 @@
 /.sqlite_history
 /.ssh
 /.subversion
+/.utoprc
+/.utop-history
 /.vagrant.d
 /.vim/.netrwhist
 /.vim/bundle/*
