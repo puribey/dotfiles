@@ -23,6 +23,7 @@
 /.config/xbuild
 /.config/fish/fishd.*
 /.config/robomongo
+/.config/yarn
 /.cups
 /.docker
 /.dropbox
@@ -63,11 +64,13 @@
 /.netrc
 /.npm
 /.node-gyp
+/.node_repl_history
 /.now.json
 /.nvm
 /.offlineimap
 /.ocamlinit
 /.opam
+/.oracle_jre_usage
 /.oh-my-zsh
 /.pebble
 /.phantomjs
@@ -97,6 +100,7 @@
 /.viminfo
 /.virtualenvs
 /.vscode
+/.vscode-react-native
 /.yarn-cache
 /.yarn-config
 /.yarn
