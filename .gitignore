@@ -83,12 +83,14 @@
 /.rbx
 /.reasoninit
 /.rediscli_history
+/.rest-client/
 /.rnd
 /.rstudio-desktop/
 /.rtop-history
 /.sqlite_history
 /.ssh
 /.subversion
+/.tooling/
 /.utoprc
 /.utop-history
 /.vagrant.d

@@ -60,3 +60,7 @@
 [i18n]
 	logOutputEncoding = UTF-8
 	commitencoding = UTF-8
+[github]
+	user = gianu
+[ghi]
+	token = !security find-internet-password -a gianu -s github.com -l 'ghi token' -w

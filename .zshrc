@@ -86,7 +86,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Personal configuration
 export ANDROID_HOME=/Users/gianu/Library/Android/sdk
-export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
 export PYTHON_HOME=/usr/local/Cellar/python/2.7.6
 
 alias ls='ls -G'
@@ -134,12 +133,15 @@ export LANG=en_US.UTF-8
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-ulimit -n 8192
-
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 export GOPATH=/Users/gianu/work/go
 export PATH=$PATH:${GOPATH}/bin
+export REACT_EDITOR=code
 
 eval $(opam config env)
 ./Users/gianu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null
+
+eval "$(rbenv init -)"
+
+ulimit -n 10240
