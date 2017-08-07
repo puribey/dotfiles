@@ -14,6 +14,7 @@
 /.cabal
 /.cache
 /.cask
+/.cargo
 /.cocoapods
 /.config/NuGet
 /.config/configstore
@@ -56,6 +57,7 @@
 /.memegen
 /.mindterm
 /.mix
+/.multirust
 /.mutt
 /.mysql_history
 /.nuget
@@ -87,6 +89,7 @@
 /.rnd
 /.rstudio-desktop/
 /.rtop-history
+/.rustup
 /.sqlite_history
 /.ssh
 /.subversion
@@ -149,3 +152,10 @@ dump.rdb
 .mongorc.js
 .v8flags.*.gianu.json
 .zsh_history
+.bash_history
+.ipython/
+.jupyter/
+.keras/
+.matplotlib/
+.ngrok2/
+.python_history

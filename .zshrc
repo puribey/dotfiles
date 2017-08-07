@@ -114,6 +114,7 @@ activate_virtualenv() {
   elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
   elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
   elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
+  elif [ -f ./bin/activate ]; then . ./bin/activate;
   fi
 }
 
@@ -142,6 +143,9 @@ export REACT_EDITOR=code
 eval $(opam config env)
 ./Users/gianu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null
 
+export REASON_MERLIN_BIN=/Users/gianu/.opam/4.02.3/bin/ocamlmerlin
+
 eval "$(rbenv init -)"
+source $HOME/.cargo/env
 
 ulimit -n 10240
