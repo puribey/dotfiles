@@ -4,8 +4,9 @@ set -e
 
 echo "Configuring the new computer...."
 
+sudo -v
+
 # First let's create the symbolic links
-# ln -s [source] [target]
 
 ln -sF `pwd`/../.ackrc ~/.ackrc
 ln -sF `pwd`/../.gemrc ~/.gemrc
