@@ -7,24 +7,24 @@ echo "Configuring the new computer...."
 # First let's create the symbolic links
 # ln -s [source] [target]
 
-ln -s .ackrc ~/.ackrc
-ln -s .gemrc ~/.gemrc
-ln -s .ghci ~/.ghci
-ln -s .gitconfig ~/.gitconfig
-ln -s .githelpers ~/.githelpers
-ln -s .hyper.js ~/.hyper.js
-ln -s .iterm2_shell_integration.fish ~/.iterm2_shell_integration.fish
-ln -s .screenrc ~/.screenrc
-ln -s .tmux.conf ~/.tmux.conf
-ln -s .vimrc ~/.vimrc
-ln -s .zprofile ~/.zprofile
-ln -s .zsh-update ~/.zsh-update
-ln -s .zshenv ~/.zshenv
-ln -s .zshrc ~/.zshrc
+ln -sF `pwd`/../.ackrc ~/.ackrc
+ln -sF `pwd`/../.gemrc ~/.gemrc
+ln -sF `pwd`/../.ghci ~/.ghci
+ln -sF `pwd`/../.gitconfig ~/.gitconfig
+ln -sF `pwd`/../.githelpers ~/.githelpers
+ln -sF `pwd`/../.hyper.js ~/.hyper.js
+ln -sF `pwd`/../.iterm2_shell_integration.fish ~/.iterm2_shell_integration.fish
+ln -sF `pwd`/../.screenrc ~/.screenrc
+ln -sF `pwd`/../.tmux.conf ~/.tmux.conf
+ln -sF `pwd`/../.vimrc ~/.vimrc
+ln -sF `pwd`/../.zprofile ~/.zprofile
+ln -sF `pwd`/../.zsh-update ~/.zsh-update
+ln -sF `pwd`/../.zshenv ~/.zshenv
+ln -sF `pwd`/../.zshrc ~/.zshrc
 
-ln -s .vim ~/.vim
-ln -s .zsh ~/.zsh
-ln -s bin ~/.bin
+ln -sF `pwd`/../.vim ~/.vim
+ln -sF `pwd`/../.zsh ~/.zsh
+ln -sF `pwd`/../bin ~/.bin
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
