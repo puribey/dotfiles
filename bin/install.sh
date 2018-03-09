@@ -24,7 +24,7 @@ ln -sF `pwd`/../.zshrc ~/.zshrc
 
 ln -sF `pwd`/../.vim ~/.vim
 ln -sF `pwd`/../.zsh ~/.zsh
-ln -sF `pwd`/../bin ~/.bin
+ln -sF `pwd`/../bin ~/bin
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
