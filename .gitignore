@@ -159,3 +159,10 @@ dump.rdb
 .matplotlib/
 .ngrok2/
 .python_history
+.openvpn-connect.json
+.terraform.d/
+bin/terraform
+.bash_profile
+.api_tz_dont_delete
+.cpan/
+.mojo/

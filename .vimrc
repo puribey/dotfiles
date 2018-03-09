@@ -102,8 +102,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'edsono/vim-matchit'
 Plug 'tomtom/tcomment_vim'
 Plug 'kien/ctrlp.vim'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'bling/vim-airline'
+" Plug 'chriskempson/vim-tomorrow-theme'
+" Plug 'bling/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'skalnik/vim-vroom'
 Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
@@ -113,12 +114,15 @@ Plug 'dag/vim-fish'
 Plug 'elixir-lang/vim-elixir'
 Plug 'scrooloose/nerdtree'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
 filetype plugin indent on
 
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMD
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -166,9 +170,9 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256
 syntax enable
-:set background=dark
+" :set background=light
 " colorscheme Tomorrow-Night-Bright
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
 
 
 " STATUS LINE
@@ -444,3 +448,15 @@ vmap <Enter> <Plug>(EasyAlign)
 
 nmap ga <Plug>(EasyAlign)
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree Commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>t :NERDTreeToggle<cr>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-fugitive Commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>b :Gblame<cr>
