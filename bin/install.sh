@@ -34,9 +34,14 @@ fi
 # Update Homebrew recipes
 brew update
 
+# Update git version
+sudo mv /usr/bin/git /usr/bin/git-apple
+brew install git
+
 # Make ZSH the default shell environment
 xhsh -s $(which zsh)
 
 # Install Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 
