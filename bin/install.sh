@@ -27,6 +27,9 @@ ln -sF `pwd`/../.vim ~/.vim
 ln -sF `pwd`/../.zsh ~/.zsh
 ln -sF `pwd`/../bin ~/bin
 
+# Create vim backup directory
+mkdir -p ~/.vim-tmp
+
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -36,11 +39,11 @@ fi
 brew update
 
 # Update git version
-sudo mv /usr/bin/git /usr/bin/git-apple
+#sudo mv /usr/bin/git /usr/bin/git-apple
 brew install git
 
 # Make ZSH the default shell environment
-xhsh -s $(which zsh)
+chsh -s $(which zsh)
 
 # Install Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

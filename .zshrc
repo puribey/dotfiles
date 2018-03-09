@@ -131,21 +131,10 @@ export PATH="/usr/local/heroku/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-to
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 export GOPATH=/Users/gianu/work/go
 export PATH=$PATH:${GOPATH}/bin
 export REACT_EDITOR=code
-
-eval $(opam config env)
-./Users/gianu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null
-
-export REASON_MERLIN_BIN=/Users/gianu/.opam/4.02.3/bin/ocamlmerlin
-
-eval "$(rbenv init -)"
-source $HOME/.cargo/env
 
 ulimit -n 10240
