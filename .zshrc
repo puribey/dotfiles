@@ -126,6 +126,10 @@ function whodoneit() {
   )
 }
 
+function chtitle {
+    echo -ne "\033]0;"$*"\007"
+}
+
 export PATH="/usr/local/heroku/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 
 export LC_ALL=en_US.UTF-8
