@@ -9,9 +9,12 @@
   local = yellow
   remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
+	meta = yellow
+	frag = magenta bold
+	old = red bold
+	commit = yellow bold
+	new = green
+	whitespace = red reverse
 [color "status"]
   added = green
   changed = yellow
@@ -56,6 +59,7 @@
   tool = vimdiff
 [core]
   editor = /usr/bin/vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [i18n]
 	logOutputEncoding = UTF-8
 	commitencoding = UTF-8
@@ -63,3 +67,10 @@
 	user = gianu
 [ghi]
 	token = !security find-internet-password -a gianu -s github.com -l 'ghi token' -w
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[commit]
+	gpgsign = true

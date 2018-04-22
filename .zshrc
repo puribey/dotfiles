@@ -50,7 +50,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast osx)
+plugins=(gitfast osx zsh-iterm-touchbar)
 
 # User configuration
 
@@ -95,8 +95,12 @@ alias sr='screen -r'
 #Kaizoku alias
 alias pb='kaizoku'
 
+# weather / moon
 alias weather='curl wttr.in'
 alias moon='curl wttr.in/Moon'
+
+# yarn
+alias yi='yarn install --pure-lockfile'
 
 export GREP_OPTIONS="--color"
 export HISTSIZE=100000

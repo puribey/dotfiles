@@ -102,7 +102,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'edsono/vim-matchit'
 Plug 'tomtom/tcomment_vim'
 Plug 'kien/ctrlp.vim'
-" Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'chriskempson/vim-tomorrow-theme'
 " Plug 'bling/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'skalnik/vim-vroom'
@@ -111,12 +111,12 @@ Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'dag/vim-fish'
-Plug 'elixir-lang/vim-elixir'
+"Plug 'elixir-lang/vim-elixir'
 Plug 'scrooloose/nerdtree'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'neovimhaskell/haskell-vim'
+"Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -163,6 +163,9 @@ augroup vimrcEx
 
   " Remove Trailing whitespace
   autocmd FileType c,cpp,java,php,ruby,python,javascript autocmd BufWritePre <buffer> :call StripTrailingWhitespaces()
+
+
+  autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,6 +173,8 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set t_Co=256
 syntax enable
+:set background=dark
+colorscheme Tomorrow-Night
 " :set background=light
 " colorscheme Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night
@@ -177,7 +182,7 @@ syntax enable
 
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set statusline=%F%m%r%h%w\ (%{&ft})\ %{fugitive#statusline()}\ %-4(%m%)%=%-19(%3l,%02c%)
+set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAP

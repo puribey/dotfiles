@@ -98,8 +98,7 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyperterm-oceanic-next',
-    'hyperline'
+    "hyper-solarized-dark"
   ],
 
   // in development, you can create a directory under
