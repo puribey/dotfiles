@@ -145,4 +145,6 @@ export GOPATH=/Users/gianu/work/go
 export PATH=$PATH:${GOPATH}/bin
 export REACT_EDITOR=code
 
+. $HOME/.zshrc-private
+
 ulimit -n 10240

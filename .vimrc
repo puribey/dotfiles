@@ -99,7 +99,7 @@ set re=1
 call plug#begin('~/.vim/plugged')
 
 " My Bundles
-Plug 'edsono/vim-matchit'
+" Plug 'edsono/vim-matchit'
 Plug 'tomtom/tcomment_vim'
 Plug 'kien/ctrlp.vim'
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -112,6 +112,7 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'dag/vim-fish'
 "Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 Plug 'scrooloose/nerdtree'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-fugitive'
