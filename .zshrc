@@ -55,6 +55,7 @@ plugins=(gitfast osx zsh-iterm-touchbar)
 # User configuration
 
 export PATH="/usr/local/heroku/bin:/Users/gianu/.rbenv/shims:/usr/local/Cellar/python/2.7.6/bin:/Users/gianu/bin:/Users/gianu/.rbenv/bin:/Users/gianu/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/apache-maven-3.1.1/bin"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -102,12 +103,18 @@ alias moon='curl wttr.in/Moon'
 # yarn
 alias yi='yarn install --pure-lockfile'
 
+#ssh - dont forward italic TERM configuration
+alias ssh="TERM=xterm-256color ssh"
+
+alias vi="nvim"
+alias vim="nvim"
+
 export GREP_OPTIONS="--color"
 export HISTSIZE=100000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export ACK_COLOR_MATCH='red'
 
@@ -134,7 +141,9 @@ function chtitle {
     echo -ne "\033]0;"$*"\007"
 }
 
-export PATH="/usr/local/heroku/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="/usr/local/heroku/bin:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -147,4 +156,34 @@ export REACT_EDITOR=code
 
 . $HOME/.zshrc-private
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   local node_version="$(nvm version)"
+#   local nvmrc_path="$(nvm_find_nvmrc)"
+#
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+#
+#     if [ "$nvmrc_node_version" = "N/A" ]; then
+#       nvm install
+#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
+#       nvm use
+#     fi
+#   elif [ "$node_version" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
+
+# AWS login
+# $(aws ecr get-login --no-include-email --region us-east-1 &> /dev/null)
+
+# Increase ulimit
 ulimit -n 10240

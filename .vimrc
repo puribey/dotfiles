@@ -99,30 +99,30 @@ set re=1
 call plug#begin('~/.vim/plugged')
 
 " My Bundles
-" Plug 'edsono/vim-matchit'
 Plug 'tomtom/tcomment_vim'
 Plug 'kien/ctrlp.vim'
 Plug 'chriskempson/vim-tomorrow-theme'
-" Plug 'bling/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'rakr/vim-one'
 Plug 'skalnik/vim-vroom'
 Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'dag/vim-fish'
-"Plug 'elixir-lang/vim-elixir'
 Plug 'elixir-editors/vim-elixir'
 Plug 'scrooloose/nerdtree'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'tpope/vim-fugitive'
-"Plug 'neovimhaskell/haskell-vim'
-"Plug 'altercation/vim-colors-solarized'
+Plug 'leafgarland/typescript-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jvirtanen/vim-hcl'
 
 call plug#end()
 
 filetype plugin indent on
 
+let g:airline_theme='one'
 " let g:airline_powerline_fonts = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMD
@@ -175,11 +175,15 @@ augroup END
 :set t_Co=256
 syntax enable
 :set background=dark
-colorscheme Tomorrow-Night
+
+" let g:one_allow_italics = 1
+colorscheme one
+" colorscheme Tomorrow-Night
 " :set background=light
 " colorscheme Tomorrow-Night-Bright
 " colorscheme Tomorrow-Night
 
+" highlight Comment cterm=italic
 
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

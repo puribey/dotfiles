@@ -40,6 +40,7 @@
   ra = !git r --all
   br = branch
   co = checkout
+  up = pull --rebase --autostash
 
   r = !git l -30
   ra = !git r --all
@@ -75,3 +76,5 @@
 	newHighlight = green bold 22
 [commit]
 	gpgsign = true
+[url "git@github.com:"]
+  insteadOf = https://github.com/
