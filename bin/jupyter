@@ -1,5 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
-docker run -it --rm -p 8888:8888 tensorflow/tensorflow:nightly-py3-jupyter
+echo "-------------------------"
+echo $1
+echo "-------------------------"
+
+DIR=$(pwd)
+
+if [ -n "$1" ] && [ "$1" != "." ]; then
+  DIR=$1
+fi
+
+if [[ -n "$1" ]]; then
+  echo "Using $DIR as workspace"
+  docker run -it --rm -p 8888:8888 -v $DIR:/tmp -w /tmp tensorflow/tensorflow:nightly-py3-jupyter
+else
+  echo "Using standard worspace"
+  docker run -it --rm -p 8888:8888 tensorflow/tensorflow:nightly-py3-jupyter
+fi
+

@@ -3,6 +3,7 @@
   email = sgianazza@gmail.com
   signingkey = B3617AA2
 [diff]
+	noprefix = true
 [color]
   ui = true
 [color "branch"]

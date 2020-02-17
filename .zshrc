@@ -1,124 +1,272 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/gianu/.oh-my-zsh
+#############################
+### Environment variables ###
+#############################
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="gianu"
-# ZSH_THEME="agnoster"
+export MAIN_EDITOR="nvim"
+export EDITOR=$MAIN_EDITOR
+export VISUAL=$EDITOR
+export LSCOLORS='exfxcxdxbxegedabagacad'
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
+# export PROMPT='%~$(git-prompt-info)$ '
+export PROMPT='$(git-prompt-info) '
+export WORDCHARS='*?_[]~=&;!#$%^(){}'
+export FZF_DEFAULT_OPTS='--reverse --color="info:#000000,spinner:#000000" --prompt="  "'
+export HISTFILE="$HOME/.history"
+export HISTSIZE=100000
+export SAVEHIST=$HISTSIZE
+export PAGER=less
+export GIT_PAGER='less -F -X'
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[00;47;30m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+export GREP_OPTIONS="--color"
+export GREP_COLORS=auto
+export GREP_COLOR=auto
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+export ACK_COLOR_MATCH='red'
+export WORDCHARS='*?[]~&;!$%^<>'
+export GO111MODULE=on
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast osx zsh-iterm-touchbar)
-
-# User configuration
-
-export PATH="/usr/local/heroku/bin:/Users/gianu/.rbenv/shims:/usr/local/Cellar/python/2.7.6/bin:/Users/gianu/bin:/Users/gianu/.rbenv/bin:/Users/gianu/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/apache-maven-3.1.1/bin"
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Personal configuration
 export ANDROID_HOME=/Users/gianu/Library/Android/sdk
-export PYTHON_HOME=/usr/local/Cellar/python/2.7.6
+export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
+export GOPATH=/Users/gianu/work/go
+
+export PATH=/usr/local/heroku/bin
+export PATH=$PATH:/Users/gianu/bin
+export PATH=$PATH:/Users/gianu/.cabal/bin
+export PATH=$PATH:$HOME/.bin
+export PATH=$PATH:./node_modules/.bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/local/git/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
+export PATH=$PATH:${GOPATH}/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:/Users/gianu/Library/flutter/bin
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+
+
+#############################
+### General configuration ###
+#############################
+
+setopt no_beep
+setopt interactive_comments
+setopt prompt_subst
+
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushd_minus
+setopt pushd_silent
+
+setopt append_history
+setopt inc_append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt share_history
+
+setopt hup
+setopt long_list_jobs
+setopt notify
+
+autoload -U compinit
+compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*:default' list-colors ''
+# case-insensitive, partial-word, and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' completer _complete _approximate
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+
+
+############################
+### Aliases              ###
+############################
 
 alias ls='ls -G'
 alias ll='ls -lG'
-alias sr='screen -r'
 
-#Kaizoku alias
+alias lzd='lazydocker'
+
 alias pb='kaizoku'
 
-# weather / moon
-alias weather='curl wttr.in'
-alias moon='curl wttr.in/Moon'
+alias yi='yarn install --pure-lockfile --mutext network'
 
-# yarn
-alias yi='yarn install --pure-lockfile'
+alias mt='mix test'
 
-#ssh - dont forward italic TERM configuration
 alias ssh="TERM=xterm-256color ssh"
 
 alias vi="nvim"
 alias vim="nvim"
 
-export GREP_OPTIONS="--color"
-export HISTSIZE=100000
-export HISTFILE="$HOME/.history"
-export SAVEHIST=$HISTSIZE
+alias python="python3"
 
-export EDITOR=nvim
+#############################
+### Plugins configuration ###
+#############################
 
-export ACK_COLOR_MATCH='red'
+source ~/.zsh/z.sh
+unalias z
 
-export WORDCHARS='*?[]~&;!$%^<>'
+autoload -U colors && colors
+
+####################
+### Key bindings ###
+####################
+bindkey -e
+
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+bindkey '^b' backward-char
+bindkey '^f' forward-char
+bindkey '\eb' backward-word
+bindkey '\ef' forward-word
+bindkey '\ed' kill-word
+bindkey '^k' kill-line
+bindkey '^d' delete-char
+bindkey '\ew' backward-kill-word
+bindkey '^u' backward-kill-line
+bindkey '^r' history-incremental-search-backward
+
+autoload -U up-line-or-beginning-search
+zle -N up-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^p' up-line-or-beginning-search
+
+autoload -U down-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^n' down-line-or-beginning-search
+
+zmodload zsh/complist
+bindkey -M menuselect '^e' accept-line
+bindkey -M menuselect '\ef' menu-complete
+bindkey -M menuselect '\eb' reverse-menu-complete
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
+zle -N insert-last-command-output
+bindkey '^x^l' insert-last-command-output
+
+autoload -U copy-earlier-word
+zle -N copy-earlier-word
+bindkey '^[m' copy-earlier-word
+
+zle -N expand-or-complete-with-waiting-dots
+bindkey '^i' expand-or-complete-with-waiting-dots
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+zle -N fancy-ctrl-z;
+bindkey '^z' fancy-ctrl-z
+
+zle -N exit-shell
+bindkey '^Sx' exit-shell
+
+bindkey -N paste
+zle -N start-paste
+bindkey '^[[200~' start-paste
+zle -N end-paste
+bindkey -M paste '^[[201~' end-paste
+zle -N paste-insert paste-insert
+bindkey -R -M paste "^@"-"\M-^?" paste-insert
+bindkey -M paste -s '^M' '^J'
+
+# bindkey -M emacs 'â' backward-word
+# bindkey -M emacs 'æ' forward-word
+# bindkey -M emacs 'ä' kill-word
+# bindkey -M menuselect 'æ' menu-complete
+# bindkey -M menuselect 'â' reverse-menu-complete
+# bindkey '®' insert-last-word
+
+#################
+### Functions ###
+#################
+
+git-prompt-info() {
+  git rev-parse --is-inside-work-tree &>/dev/null
+
+  if [[ $? -eq 0 ]]; then
+    echo "[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%} $(current-git-branch) $(git-dirty)%{$reset_color%}]$"
+  else
+    echo "[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%}]$"
+  fi
+
+  # echo " %F{green}($(current-git-branch)%f $(git-dirty)%F{green})%f"
+
+}
+
+current-git-branch() {
+  git symbolic-ref --short -q HEAD
+}
+
+git-dirty() {
+  test -z "$(command git status --porcelain --ignore-submodules -unormal)"
+  if [[ $? -eq 1 ]]; then
+    echo '%F{red}✗%f'
+  else
+    echo '%F{green}✔%f'
+  fi
+}
+
+expand-or-complete-with-waiting-dots() {
+  echo -n "\e[31m......\e[0m"
+  zle expand-or-complete
+  zle redisplay
+}
+
+insert-last-command-output() {
+  LBUFFER+="$(eval $history[$((HISTCMD-1))])"
+}
+
+fancy-ctrl-z() {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+
+exit-shell() {
+  exit
+}
+
+start-paste() {
+  bindkey -A paste main
+}
+
+end-paste() {
+  bindkey -e
+  LBUFFER+=$_paste_content
+  unset _paste_content
+}
+
+paste-insert() {
+  _paste_content+=$KEYS
+}
+
 
 activate_virtualenv() {
   if [ -f env/bin/activate ]; then . env/bin/activate;
@@ -141,49 +289,27 @@ function chtitle {
     echo -ne "\033]0;"$*"\007"
 }
 
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="/usr/local/heroku/bin:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+function ecrlogin() {
+  $(aws ecr get-login --no-include-email --region us-east-1)
+}
 
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+function nuse() {
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  nvm use
+}
 
-export GOPATH=/Users/gianu/work/go
-export PATH=$PATH:${GOPATH}/bin
-export REACT_EDITOR=code
+#############
+### Other ###
+#############
 
 . $HOME/.zshrc-private
 
-# nvm
+
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# autoload -U add-zsh-hook
-# load-nvmrc() {
-#   local node_version="$(nvm version)"
-#   local nvmrc_path="$(nvm_find_nvmrc)"
-#
-#   if [ -n "$nvmrc_path" ]; then
-#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-#
-#     if [ "$nvmrc_node_version" = "N/A" ]; then
-#       nvm install
-#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
-#       nvm use
-#     fi
-#   elif [ "$node_version" != "$(nvm version default)" ]; then
-#     echo "Reverting to nvm default version"
-#     nvm use default
-#   fi
-# }
-# add-zsh-hook chpwd load-nvmrc
-# load-nvmrc
-
-# AWS login
-# $(aws ecr get-login --no-include-email --region us-east-1 &> /dev/null)
-
-# Increase ulimit
 ulimit -n 10240
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
