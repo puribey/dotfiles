@@ -102,7 +102,23 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 ### Aliases              ###
 ############################
 
-alias ls='ls -G'
+alias ls='exa' #-G
+alias ps='procs'
+alias cat='bat'
+alias less='bat'
+alias grep='ripgrep'
+alias rg='ripgrep'
+alias nano='kibi'
+alias find='fd'
+alias du='dust'
+# alias time='hyperfine"
+alias top='ytop'
+alias iftop='bandwhich'
+alias hexdump='hx'
+alias objdump='bingrep'
+alias http-server='miniserve'
+alias license='licensor'
+
 alias ll='ls -lG'
 
 alias lzd='lazydocker'
