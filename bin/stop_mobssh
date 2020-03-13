@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+if [ -f ~/run-teach.pid ]; then
+  pkill -F ~/run-teach.pid
+  rm ~/run-teach.pid
+fi
+
+
+if [ -f ~/run-student.pid ]; then
+  pkill -F ~/run-student.pid
+  rm ~/run-student.pid
+fi
+
+if [ -f ~/run-home.pid ]; then
+  pkill -F ~/run-home.pid
+  rm ~/run-home.pid
+fi

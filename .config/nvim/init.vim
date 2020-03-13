@@ -129,6 +129,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'jonathanfilip/vim-lucius'
 
 call plug#end()
 
@@ -195,7 +196,7 @@ syntax enable
 
 let g:gruvbox_italic=1
 " colorscheme gruvbox
-colorscheme material
+colorscheme lucius
 :set background=dark
 
 " highlight Comment cterm=italic
@@ -288,8 +289,9 @@ map <leader>n :call RenameFile()<cr>
 " MAPS AND CONFIGURATION TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <leader>f :GFiles --exclude-standard --others --cached<cr>
+" map <leader>f :GFiles --exclude-standard --others --cached<cr>
 map <leader>d :GFiles --exclude-standard --others --cached %%<cr>
+map <leader>f :Files<cr>
 map <leader>F :Files<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

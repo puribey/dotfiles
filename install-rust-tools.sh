@@ -3,6 +3,7 @@
 set -e
 
 rustup toolchain add nightly
+curl -fsSL https://starship.rs/install.sh | bash
 
 #ls replacement
 cargo install exa

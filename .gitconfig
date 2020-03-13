@@ -1,7 +1,7 @@
 [user]
   name = Sergio Rafael Gianazza
   email = sgianazza@gmail.com
-  signingkey = F0D3E6F5
+  # signingkey = F0D3E6F5
 [diff]
 	noprefix = true
 [color]
@@ -75,7 +75,10 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-[commit]
-	gpgsign = true
+# [commit]
+#   gpgsign = true
 [url "git@github.com:"]
   insteadOf = https://github.com/
+
+[pull]
+	rebase = false

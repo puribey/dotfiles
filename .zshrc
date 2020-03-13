@@ -8,7 +8,7 @@ export VISUAL=$EDITOR
 export LSCOLORS='exfxcxdxbxegedabagacad'
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
 # export PROMPT='%~$(git-prompt-info)$ '
-export PROMPT='$(git-prompt-info) '
+# export PROMPT='$(git-prompt-info) '
 export WORDCHARS='*?_[]~=&;!#$%^(){}'
 export FZF_DEFAULT_OPTS='--reverse --color="info:#000000,spinner:#000000" --prompt="  "'
 export HISTFILE="$HOME/.history"
@@ -30,7 +30,12 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 export ACK_COLOR_MATCH='red'
 export WORDCHARS='*?[]~&;!$%^<>'
-export GO111MODULE=on
+export GO111MODULE=""
+export GOPROXY=direct
+export GOSUMDB=off
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+export LDFLAGS="-L/usr/local/opt/libffi/lib"
+export CPPFLAGS="-I/usr/local/opt/libffi/include"
 
 export ANDROID_HOME=/Users/gianu/Library/Android/sdk
 export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
@@ -101,35 +106,39 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 ### Aliases              ###
 ############################
 
-alias ls='exa' #-G
-alias ps='procs'
-alias cat='bat'
-alias less='bat'
-alias grep='ripgrep'
-alias rg='ripgrep'
-alias nano='kibi'
-alias find='fd'
-alias du='dust'
+# alias ls='exa' #-G
+# alias ps='procs'
+# alias cat='bat'
+# alias less='bat'
+# alias grep='ripgrep'
+# alias rg='ripgrep'
+# alias nano='kibi'
+# alias find='fd'
+# alias du='dust'
 # alias time='hyperfine"
-alias top='ytop'
+# alias top='ytop'
 alias iftop='bandwhich'
-alias hexdump='hx'
-alias objdump='bingrep'
-alias http-server='miniserve'
-alias license='licensor'
+# alias hexdump='hx'
+# alias objdump='bingrep'
+# alias http-server='miniserve'
+# alias license='licensor'
 
+<<<<<<< HEAD
 # alias ls='ls -G --color'
+=======
+alias ls='ls -G'
+>>>>>>> 6cc1f98... modifications to nvim and gitconfig
 alias ll='ls -lG'
 
 alias lzd='lazydocker'
 
 alias pb='kaizoku'
 
-alias yi='yarn install --pure-lockfile --mutext network'
+alias yi='yarn install --pure-lockfile --mutex network'
 
 alias mt='mix test'
 
-alias ssh="TERM=xterm-256color ssh"
+# alias ssh="TERM=xterm-256color ssh"
 
 alias vi="nvim"
 alias vim="nvim"
@@ -331,4 +340,23 @@ ulimit -n 10240
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
+eval "$(starship init zsh)"
+
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
