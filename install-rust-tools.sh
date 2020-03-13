@@ -2,6 +2,8 @@
 
 set -e
 
+rustup toolchain add nightly
+
 #ls replacement
 cargo install exa
 # ps replacement

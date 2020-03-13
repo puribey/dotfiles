@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# install fonts
+sudo apt install fonts-firacode
+
 # set some defaults
 
 # delay and repetition for gnome
