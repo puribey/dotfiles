@@ -23,7 +23,6 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[00;47;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
-export GREP_OPTIONS="--color"
 export GREP_COLORS=auto
 export GREP_COLOR=auto
 export HOMEBREW_NO_ANALYTICS=1
@@ -119,6 +118,7 @@ alias objdump='bingrep'
 alias http-server='miniserve'
 alias license='licensor'
 
+# alias ls='ls -G --color'
 alias ll='ls -lG'
 
 alias lzd='lazydocker'
@@ -135,6 +135,8 @@ alias vi="nvim"
 alias vim="nvim"
 
 alias python="python3"
+
+alias grep="grep --color"
 
 #############################
 ### Plugins configuration ###
