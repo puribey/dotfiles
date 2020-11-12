@@ -1,6 +1,46 @@
 " This is GiaNU's Vim Configuration
 " vim:set ts=2 sts=2 sw=2 expandtab:
 "
+
+" remove all existing autocmds
+autocmd!
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LOAD Plug
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')
+
+" My Bundles
+Plug 'tomtom/tcomment_vim'
+" Plug 'rakr/vim-one'
+" Plug 'skalnik/vim-vroom'
+" Plug 'othree/yajs.vim'
+" Plug 'othree/es.next.syntax.vim'
+" Plug 'mxw/vim-jsx'
+" Plug 'peitalin/vim-jsx-typescript'
+" Plug 'dag/vim-fish'
+" Plug 'elixir-editors/vim-elixir'
+Plug 'scrooloose/nerdtree'
+" Plug 'ekalinin/Dockerfile.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'Quramy/tsuquyomi'
+Plug 'w0rp/ale'
+
+" Plug 'jvirtanen/vim-hcl'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+" Plug 'zivyangll/git-blame.vim'
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'martinda/Jenkinsfile-vim-syntax'
+" Plug 'cespare/vim-toml'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'jonathanfilip/vim-lucius'
+
+call plug#end()
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -22,19 +62,21 @@ set hlsearch
 set ignorecase smartcase
 " highlight current line
 set cursorline
-set cmdheight=2
+set nocursorcolumn
+set cmdheight=1
 set switchbuf=useopen
-set numberwidth=5
 set showtabline=2
 set winwidth=79
+" set numberwidth=5
 set shell=bash
 " Prevent vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 set t_ti= t_te=
 " Keep more context when scrolling off the end of a buffer
 set scrolloff=3
+set scrolljump=8
 " Store temporary files in a central spot
-set backup
+set nobackup
 set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,/var/tmp./tmp
@@ -43,7 +85,7 @@ set backspace=indent,eol,start
 " Display incomplete command
 set showcmd
 " Display the line number and column number
-set ruler
+" set ruler
 " Show line number in the left side
 set number
 " Enable syntax highlighting
@@ -64,6 +106,8 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set encoding=utf-8
 set lazyredraw
+
+:set termguicolors
 
 let mapleader=","
 let maplocalleader=","
@@ -92,38 +136,16 @@ set autoread
 " slower with the new regex engine.
 set re=1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LOAD Plug
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-call plug#begin('~/.vim/plugged')
-
-" My Bundles
-Plug 'tomtom/tcomment_vim'
-Plug 'kien/ctrlp.vim'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'rakr/vim-one'
-Plug 'skalnik/vim-vroom'
-Plug 'mattn/emmet-vim'
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
-Plug 'mxw/vim-jsx'
-Plug 'dag/vim-fish'
-Plug 'elixir-editors/vim-elixir'
-Plug 'scrooloose/nerdtree'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'jvirtanen/vim-hcl'
-
-call plug#end()
 
 filetype plugin indent on
 
-let g:airline_theme='one'
-" let g:airline_powerline_fonts = 1
+:set updatetime=200
+:set completeopt=menu,preview
+
+let NERDTreeShowHidden=1
+
+" let g:typescript_compiler_binary='tsc'
+" let g:typescript_compiler_options='--jsx react'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMD
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -169,25 +191,48 @@ augroup vimrcEx
   autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
+autocmd FileType go setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:set t_Co=256
-syntax enable
-:set background=dark
+" :set t_Co=256
+" syntax enable
 
-" let g:one_allow_italics = 1
-colorscheme one
-" colorscheme Tomorrow-Night
-" :set background=light
-" colorscheme Tomorrow-Night-Bright
-" colorscheme Tomorrow-Night
+" colorscheme gruvbox
+colorscheme lucius
+:set background=dark
 
 " highlight Comment cterm=italic
 
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM-ALE CONFIG
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_linters = {'javascript': [], 'typescript': ['tsserver', 'eslint'], 'typescript.tsx': ['tsserver', 'eslint']}
+let g:ale_fixers = {'javascript': [], 'typescript': ['prettier'], 'typescript.tsx': ['prettier']}
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_delay = 0
+let g:ale_set_quickfix = 0
+let g:ale_set_loclist = 0
+let g:ale_javascript_eslint_executable = 'eslint --cache'
+nnoremap gj :ALENextWrap<cr>
+nnoremap gk :ALEPreviousWrap<cr>
+nnoremap g1 :ALEFirst<cr>
+" This mapping will kill all ALE-related processes (including tsserver). It's
+" necessary when those processes get confused. E.g., tsserver will sometimes
+" show type errors that don't actually exist. I don't know exactly why that
+" happens yet, but I think that it's related to renaming files.
+nnoremap g0 :ALEStopAllLSPs<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tsuquyomi
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-ale handles TypeScript quickfix, so tell Tsuquyomi not to do it.
+let g:tsuquyomi_disable_quickfix = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAP
@@ -208,8 +253,13 @@ imap <c-c> <esc>
 :nnoremap <CR> :nohlsearch<cr>
 nnoremap <leader><leader> <c-^>
 
+"Align selected lines
+vnoremap <leader>ib :!align<cr>
+
+" Close all other splits
+nnoremap <leader>o :only<cr>
 " Toggle NERDTree
-nnoremap <C-\> :NERDTreeToggle<cr>
+" nnoremap <C-\> :NERDTreeToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -233,6 +283,11 @@ map <Left> :echo "no!"<cr>
 map <Right> :echo "no!"<cr>
 map <Up> :echo "no!"<cr>
 map <Down> :echo "no!"<cr>
+
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILE IN DIRECTORY OF CURRENT FILE
@@ -263,180 +318,20 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PROMOTE VARIABLE TO RSPEC LET
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! PromoteToLet()
-  :normal! dd
-  " :exec '?^\s*it\>'
-  :normal! P
-  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
-  :normal ==
-endfunction
-:command! PromoteToLet :call PromoteToLet()
-:map <leader>p :PromoteToLet<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" EXTRACT VARIABLE (SKETCHY)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! ExtractVariable()
-  let name = input("Variable name: ")
-  if name == ''
-    return
-  endif
-
-  " Enter visual mode
-  normal! gv
-
-  " Replace selected text with the variable name
-  exec "normal c" . name
-  " Define the variable on the line above
-  exec "normal! O" . name . " = "
-  " Paste the original selected text to be the variable value
-  normal! $p
-endfunction
-vnoremap <leader>rv :call ExtractVariable()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" INLINE VARIABLE (SKETCHY)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InlineVariable()
-  " Copy the variable under the cursor into the 'a' register
-  let l:tmp_a = @a
-  :normal "ayiw
-  " Delete variable and equal sign
-  :normal 2daW
-  " Delete the expression into 'b' register
-  :let l:tmp_b = @b
-  :normal "bd$
-  " Delete the remant of the line
-  :normal dd
-  " Go to the end of the previous line so we can start our search for the
-  " usage of the variable to replace. Doing 'O' instead of 'k$' doesn't
-  " work; I'm not sure why
-  normal k$
-  " Find the next ocurrence of the variable
-  exec '/\<' . @a . '\>'
-  " Replace that ocurrence with the text yanked
-  exec ':.s/\<' . @a . '\>/' . @b
-  :let @a = l:tmp_a
-  :let @b = l:tmp_b
-endfunction
-nnoremap <leader>ri :call InlineVariable()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPS AND CONFIGURATION TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"use the silver searcher (brews install the_silver_searcher)
-let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore vendor/bundle -g ""'
+map <leader>f :GFiles %%<cr>
+" map <leader>d :GFiles --exclude-standard --others --cached %%<cr>
+" map <leader>f :Files<cr>
+map <leader>F :Files<cr>
 
-map <leader>gr :topleft :split config/routes.rb<cr>
-function! ShowRoutes()
-  " Requires 'scratch' plugin
-  :topleft 100 :split  __Routes__
-  " Make sure Vim doesn't write  __Routes__ as a file
-  :set buftype=nofile
-  " Delete everything
-  :normal 1GdG
-  " Put routes output in buffer
-  :0r! rake -s routes
-  " Size window to number of lines
-  :exec ":normal " . line("$") . "_ "
-  " Move cursor to bottom
-  :normal 1GG
-  " Delete empty trailing line
-  :normal dd
-endfunction
-
-map <leader>gR :call ShowRoutes()<cr>
-map <leader>cc :CtrlPClearCache<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
-" map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gv :CtrlP app/views<cr>
-map <leader>gc :CtrlP app/controllers<cr>
-map <leader>gm :CtrlP app/models<cr>
-map <leader>gh :CtrlP app/helpers<cr>
-map <leader>gl :CtrlP app/lib<cr>
-map <leader>gp :CtrlP public<cr>
-map <leader>gs :CtrlP public/stylesheets/saas<cr>
-map <leader>gf :CtrlP features<cr>
-map <leader>f :CtrlP<cr>
-" map <leader>f :CommandT<cr>
-map <leader>F :CtrlP %%<cr>
-map <leader>gt :CtrlPTag<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SWITCH BETWEEN TEST AND PRODUCTION CODE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! OpenTestAlternate()
-  let new_file = AlternateForCurrentFile()
-  exec ':e ' . new_file
-endfunction
-function! AlternateForCurrentFile()
-  let current_file = expand("%")
-  let new_file = current_file
-  let in_spec = match(current_file, '^spec/') != -1
-  let going_to_spec = !in_spec
-  let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') != -1
-  if going_to_spec
-    if in_app
-      let new_file = substitute(new_file, '^app/', '', '')
-    end
-    let new_file = substitute(new_file, '\.rb$', '_spec.rb', '')
-    let new_file = 'spec/' . new_file
-  else
-    let new_file = substitute(new_file, '_spec\.rb$' , '.rb', '')
-    let new_file = substitute(new_file, '^spec/', '' ,'')
-    if in_app
-      let new_file = 'app/' . new_file
-    end
-  endif
-  return new_file
-endfunction
-nnoremap <leader>. :call OpenTestAlternate()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUNNIG TEST
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>a :call RunTests('')<cr>
-function! RunTests(filename)
-  " Write the file and run test for the given filename
-  :w
-  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo;
-  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo;
-  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo;
-  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo;
-  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo;
-  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo;
-  if match(a:filename, '\.feature$') != -1
-    exec ":!script/features " . a:filename
-  else
-    if filereadable("script/test")
-      exec ":!script/test " . a:filename
-    elseif filereadable("Gemfile")
-      exec ":!bundle exec rspec spec " . a:filename . " --color"
-    else
-      exec ":!rspec spec " . a:filename . " --color"
-    end
-  end
-endfunction
-"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " INSERT CURRENT TIME
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUN CURRENT FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>rf :call RunCurrentFile()<cr>
-
-function! RunCurrentFile()
-  if &filetype =~ 'coffee'
-    exec ":w\|:!coffee " . expand('%')
-  endif
-endfunction
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -452,11 +347,11 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALIGNMENT COMMANDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:easy_align_delimiters = {'f': { 'pattern': 'from' } }
-
-vmap <Enter> <Plug>(EasyAlign)
-
-nmap ga <Plug>(EasyAlign)
+" let g:easy_align_delimiters = {'f': { 'pattern': 'from' } }
+"
+" vmap <Enter> <Plug>(EasyAlign)
+"
+" nmap ga <Plug>(EasyAlign)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree Commands
@@ -466,7 +361,35 @@ map <leader>t :NERDTreeToggle<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-fugitive Commands
+" git related Commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <leader>b :Gblame<cr>
+" map <leader>b :Gblame<cr>
+map <leader>b :<C-u>call gitblame#echo()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TSX Color support
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" dark red
+hi tsxTagName guifg=#E06C75
+
+" orange
+hi tsxCloseString guifg=#F99575
+hi tsxCloseTag guifg=#F99575
+hi tsxAttributeBraces guifg=#F99575
+hi tsxEqual guifg=#F99575
+
+" yellow
+hi tsxAttrib guifg=#F8BD7F cterm=italic
+
+" light-grey
+hi tsxTypeBraces guifg=#999999
+" dark-grey
+hi tsxTypes guifg=#666666
+
+hi ReactState guifg=#C176A7
+hi ReactProps guifg=#D19A66
+hi Events ctermfg=204 guifg=#56B6C2
+hi ReduxKeywords ctermfg=204 guifg=#C678DD
+hi WebBrowser ctermfg=204 guifg=#56B6C2
+hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
