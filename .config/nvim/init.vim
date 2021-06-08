@@ -102,24 +102,17 @@ call plug#begin('~/.vim/plugged')
 
 " My Bundles
 Plug 'tomtom/tcomment_vim'
-Plug 'chriskempson/vim-tomorrow-theme'
-" Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 Plug 'skalnik/vim-vroom'
-Plug 'kaicataldo/material.vim'
-" Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'peitalin/vim-jsx-typescript'
-" Plug 'dag/vim-fish'
+Plug 'dag/vim-fish'
 Plug 'elixir-editors/vim-elixir'
 Plug 'scrooloose/nerdtree'
 Plug 'ekalinin/Dockerfile.vim'
-" Plug 'tpope/vim-fugitive'
 Plug 'leafgarland/typescript-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'jvirtanen/vim-hcl'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -135,9 +128,6 @@ call plug#end()
 
 filetype plugin indent on
 
-let g:airline_theme='one'
-let g:airline_powerline_fonts=1
-let g:Powerline_symbols='fancy'
 let NERDTreeShowHidden=1
 
 let g:typescript_compiler_binary='tsc'
@@ -194,7 +184,6 @@ autocmd FileType go setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
 :set t_Co=256
 syntax enable
 
-let g:gruvbox_italic=1
 " colorscheme gruvbox
 colorscheme lucius
 :set background=dark

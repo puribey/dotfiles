@@ -8,9 +8,9 @@
 #
 
 # Set computer name
-COMPUTERNAME="gir"
-HOSTNAME='gir'
-LOCALHOSTNAME='gir'
+COMPUTERNAME="laika"
+HOSTNAME='laika'
+LOCALHOSTNAME='laika'
 
 # Ask for the administrator password upfront
 sudo -v

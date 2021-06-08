@@ -2,7 +2,7 @@
 ### Environment variables ###
 #############################
 
-set -Ux MAIN_EDITOR "nvim"
+set -Ux MAIN_EDITOR "vim"
 set -Ux EDITOR $MAIN_EDITOR
 set -Ux VISUAL $EDITOR
 set -Ux LSCOLORS 'exfxcxdxbxegedabagacad'
@@ -74,7 +74,7 @@ alias ll 'ls -lG'
 
 alias lzd 'lazydocker'
 
-alias pb 'kaizoku'
+# alias pb 'kaizoku'
 
 alias yi 'yarn install --pure-lockfile --mutex network'
 
@@ -82,8 +82,10 @@ alias mt 'mix test'
 
 # alias ssh "TERM xterm-256color ssh"
 
-alias vi "nvim"
-alias vim "nvim"
+alias vi "/Applications/MacVim.app/Contents/bin/vim"
+alias vim "/Applications/MacVim.app/Contents/bin/vim"
+# alias vi "nvim"
+# alias vim "nvim"
 
 alias python "python3"
 
@@ -96,13 +98,9 @@ alias python "python3"
 
 
 set -Ux NVM_DIR "$HOME/.nvm"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ulimit -n 10240
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [ -f /usr/local/share/autojump/autojump.fish ]; . /usr/local/share/autojump/autojump.fish
 
-starship init fish | source
-
+# fish prompt config

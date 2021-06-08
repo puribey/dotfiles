@@ -40,10 +40,11 @@ export CPPFLAGS="-I/usr/local/opt/libffi/include"
 export ANDROID_HOME=/Users/gianu/Library/Android/sdk
 export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
 export GOPATH=/Users/gianu/work/go
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home/
 
-export PATH=/usr/local/heroku/bin
+# export PATH=/usr/local/heroku/bin
 export PATH=$PATH:/Users/gianu/bin
-export PATH=$PATH:/Users/gianu/.cabal/bin
+# export PATH=$PATH:/Users/gianu/.cabal/bin
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:./node_modules/.bin
 export PATH=$PATH:/usr/local/bin
@@ -53,10 +54,11 @@ export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/local/git/bin
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
 export PATH=$PATH:${GOPATH}/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:/Users/gianu/Library/flutter/bin
+export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
+# export PATH=$PATH:/Users/gianu/Library/flutter/bin
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -101,6 +103,8 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 
+autoload -U promptinit; promptinit
+prompt pure
 
 ############################
 ### Aliases              ###
@@ -123,16 +127,13 @@ alias iftop='bandwhich'
 # alias http-server='miniserve'
 # alias license='licensor'
 
-<<<<<<< HEAD
 # alias ls='ls -G --color'
-=======
 alias ls='ls -G'
->>>>>>> 6cc1f98... modifications to nvim and gitconfig
 alias ll='ls -lG'
 
 alias lzd='lazydocker'
 
-alias pb='kaizoku'
+# alias pb='kaizoku'
 
 alias yi='yarn install --pure-lockfile --mutex network'
 
@@ -142,6 +143,7 @@ alias mt='mix test'
 
 alias vi="nvim"
 alias vim="nvim"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 alias python="python3"
 
@@ -230,31 +232,31 @@ bindkey -M paste -s '^M' '^J'
 ### Functions ###
 #################
 
-git-prompt-info() {
-  git rev-parse --is-inside-work-tree &>/dev/null
-
-  if [[ $? -eq 0 ]]; then
-    echo "[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%} $(current-git-branch) $(git-dirty)%{$reset_color%}]$"
-  else
-    echo "[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%}]$"
-  fi
-
-  # echo " %F{green}($(current-git-branch)%f $(git-dirty)%F{green})%f"
-
-}
-
-current-git-branch() {
-  git symbolic-ref --short -q HEAD
-}
-
-git-dirty() {
-  test -z "$(command git status --porcelain --ignore-submodules -unormal)"
-  if [[ $? -eq 1 ]]; then
-    echo '%F{red}✗%f'
-  else
-    echo '%F{green}✔%f'
-  fi
-}
+# git-prompt-info() {
+#   git rev-parse --is-inside-work-tree &>/dev/null
+#
+#   if [[ $? -eq 0 ]]; then
+#     echo "[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%} $(current-git-branch) $(git-dirty)%{$reset_color%}]$"
+#   else
+#     echo "[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%}]$"
+#   fi
+#
+#   # echo " %F{green}($(current-git-branch)%f $(git-dirty)%F{green})%f"
+#
+# }
+#
+# current-git-branch() {
+#   git symbolic-ref --short -q HEAD
+# }
+#
+# git-dirty() {
+#   test -z "$(command git status --porcelain --ignore-submodules -unormal)"
+#   if [[ $? -eq 1 ]]; then
+#     echo '%F{red}✗%f'
+#   else
+#     echo '%F{green}✔%f'
+#   fi
+# }
 
 expand-or-complete-with-waiting-dots() {
   echo -n "\e[31m......\e[0m"
@@ -266,16 +268,16 @@ insert-last-command-output() {
   LBUFFER+="$(eval $history[$((HISTCMD-1))])"
 }
 
-fancy-ctrl-z() {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-
+# fancy-ctrl-z() {
+#   if [[ $#BUFFER -eq 0 ]]; then
+#     BUFFER="fg"
+#     zle accept-line
+#   else
+#     zle push-input
+#     zle clear-screen
+#   fi
+# }
+#
 exit-shell() {
   exit
 }
@@ -295,22 +297,22 @@ paste-insert() {
 }
 
 
-activate_virtualenv() {
-  if [ -f env/bin/activate ]; then . env/bin/activate;
-  elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
-  elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
-  elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
-  elif [ -f ./bin/activate ]; then . ./bin/activate;
-  fi
-}
+# activate_virtualenv() {
+#   if [ -f env/bin/activate ]; then . env/bin/activate;
+#   elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
+#   elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
+#   elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
+#   elif [ -f ./bin/activate ]; then . ./bin/activate;
+#   fi
+# }
 
-function whodoneit() {
-  (set -e &&
-    for x in $(git grep -I --name-only $1); do
-      git blame -f -- $x | grep $1;
-    done
-  )
-}
+# function whodoneit() {
+#   (set -e &&
+#     for x in $(git grep -I --name-only $1); do
+#       git blame -f -- $x | grep $1;
+#     done
+#   )
+# }
 
 function chtitle {
     echo -ne "\033]0;"$*"\007"
@@ -338,25 +340,9 @@ export NVM_DIR="$HOME/.nvm"
 
 ulimit -n 10240
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
 

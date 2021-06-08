@@ -19,11 +19,15 @@
 /.config/NuGet
 /.config/configstore
 /.config/heroku
+/.config/iterm2
 /.config/menus
 /.config/micro
 /.config/xbuild
 /.config/fish/fishd.*
+/.config/fish
 /.config/robomongo
+/.config/stripe
+/.config/swi-prolog
 /.config/yarn
 /.config/fish/fish-private
 /.config/fish/fish_variables
@@ -140,6 +144,7 @@
 /VirtualBox VMs
 /bin/subl
 /bin/match
+/bin/JDownloader 2.0/
 pgadmin.log
 .pgadmin_histoqueries
 .exercism.go
