@@ -136,6 +136,7 @@ alias lzd='lazydocker'
 # alias pb='kaizoku'
 
 alias yi='yarn install --pure-lockfile --mutex network'
+alias yd='yarn dev'
 
 alias mt='mix test'
 
@@ -345,4 +346,5 @@ ulimit -n 10240
 # eval "$(starship init zsh)"
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="/Users/gianu/Library/Android/sdk/platform-tools:$PATH"
 
