@@ -72,6 +72,7 @@ set t_vb=
 "let g:airline#extensions#tabline#fnamemod = ':t'
 
 let g:airline_theme='molokai'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " moving around, searching, and patterns ----------------------------------
 set incsearch
@@ -462,7 +463,7 @@ map <leader>v :view %%
 " map <leader>f :GFiles %%<cr>
 " map <leader>d :GFiles --exclude-standard --others --cached %%<cr>
 " map <leader>f :Files<cr>
-" map <leader>F :Files<cr>
+map <leader>F :Files<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

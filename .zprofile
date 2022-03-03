@@ -8,3 +8,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 #### END FIG ENV VARIABLES ####
 
 
+eval "$(/opt/homebrew/bin/brew shellenv)"

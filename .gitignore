@@ -20,12 +20,14 @@
 /.config/configstore
 /.config/heroku
 /.config/iterm2
+/.config/flutter
 /.config/menus
 /.config/micro
 /.config/xbuild
 /.config/fish/fishd.*
 /.config/fish
 /.config/robomongo
+/.config/raycast
 /.config/stripe
 /.config/swi-prolog
 /.config/yarn
@@ -120,6 +122,7 @@
 /.yarn
 /.yarnrc
 /.zcompdump-*
+/.zsh/pure
 /Applications
 /bin/micro
 /bin/cyclotron

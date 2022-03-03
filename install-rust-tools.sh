@@ -30,6 +30,6 @@ cargo install hx
 # bingrep
 cargo install bingrep
 # miniserve: simple http server
-cargo +nightly install -f miniserve
+#cargo +nightly install -f miniserve
 # Generate licenses
 cargo install licensor

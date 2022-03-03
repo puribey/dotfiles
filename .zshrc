@@ -57,6 +57,7 @@ export PATH=$PATH:/usr/local/go/bin
 # export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
 export PATH=$PATH:${GOPATH}/bin
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:/opt/homebrew/bin
 export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
 # export PATH=$PATH:/Users/gianu/Library/flutter/bin
 
@@ -102,6 +103,8 @@ zstyle ':completion:*' completer _complete _approximate
 zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+
+fpath+=$HOME/.zsh/pure
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -149,6 +152,8 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias python="python3"
 
 alias grep="grep --color"
+alias fu="fnm use"
+alias fuyi="fnm use && yarn install --pure-lockfile --mutex network"
 
 #############################
 ### Plugins configuration ###
@@ -324,11 +329,6 @@ function ecrlogin() {
   $(aws ecr get-login --no-include-email --region us-east-1)
 }
 
-function nuse() {
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  nvm use
-}
-
 #############
 ### Other ###
 #############
@@ -336,14 +336,12 @@ function nuse() {
 . $HOME/.zshrc-private
 
 
-export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(fnm env)"
 
 ulimit -n 10240
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-# eval "$(starship init zsh)"
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/Users/gianu/Library/Android/sdk/platform-tools:$PATH"

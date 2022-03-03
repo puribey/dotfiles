@@ -104,3 +104,9 @@ ulimit -n 10240
 [ -f /usr/local/share/autojump/autojump.fish ]; . /usr/local/share/autojump/autojump.fish
 
 # fish prompt config
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /Users/gianu/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
