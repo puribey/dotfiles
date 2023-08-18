@@ -23,8 +23,8 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[00;47;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
-export GREP_COLORS=auto
-export GREP_COLOR=auto
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;35;40'
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
@@ -154,13 +154,15 @@ alias python="python3"
 alias grep="grep --color"
 alias fu="fnm use"
 alias fuyi="fnm use && yarn install --pure-lockfile --mutex network"
+alias mkt="make test-watch"
+alias pi="pnpm install"
+
+## Kubectl aliases for ClassDojo ##
+alias kctl-west-prod='kubectl --context="aws/us-west-1-external"'
 
 #############################
 ### Plugins configuration ###
 #############################
-
-source ~/.zsh/z.sh
-unalias z
 
 autoload -U colors && colors
 
@@ -274,6 +276,15 @@ insert-last-command-output() {
   LBUFFER+="$(eval $history[$((HISTCMD-1))])"
 }
 
+searchi () {
+        selected_line=$(sk --ansi -i -c 'rg -i --line-number --color=always "{}"')
+        split_lines=("${(@s/:/)selected_line}")
+        if [[ ${#split_lines} > 1 ]]
+        then
+                nvim +${split_lines[2]} "${split_lines[1]}"
+        fi
+}
+
 # fancy-ctrl-z() {
 #   if [[ $#BUFFER -eq 0 ]]; then
 #     BUFFER="fg"
@@ -326,7 +337,29 @@ function chtitle {
 
 
 function ecrlogin() {
-  $(aws ecr get-login --no-include-email --region us-east-1)
+  aws ecr get-login-password \
+    --region us-east-1 \
+| docker login \
+    --username AWS \
+    --password-stdin 347708466071.dkr.ecr.us-east-1.amazonaws.com
+}
+
+# Mob scripts
+
+function mob-start() {
+  if [ -z "$1" ]; then
+    echo "You must provide a name for the branch."
+    echo "eg.: mob-start my_branch 5"
+    return 1
+  fi
+
+  if [ -z "$2" ]; then
+    echo "You must provide a time for the duration of the mob round."
+    echo "eg.: mob-start my_branch 5"
+    return 2
+  fi
+
+  git checkout -b "$1" && git push origin "$1" --set-upstream --no-verify && mob start --include-uncommitted-changes $2;
 }
 
 #############
@@ -340,9 +373,17 @@ eval "$(fnm env)"
 
 ulimit -n 10240
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export PATH="/Users/gianu/Library/Android/sdk/platform-tools:$PATH"
 
+# pnpm
+export PNPM_HOME="/Users/gianu/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+export PATH="$PATH:/Users/gianu/.local/bin"
+# pnpm end
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+# Enable asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

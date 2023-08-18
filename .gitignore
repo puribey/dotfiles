@@ -36,6 +36,7 @@
 /.config/coc/
 /.config/flipper/
 /.config/nvim/pack/
+/.config/Lumina
 /.cups
 /.docker
 /.dropbox
@@ -181,3 +182,9 @@ bin/terraform
 .cpan/
 .mojo/
 .vim/pack/
+.config/exercism/
+.config/gatsby/
+.config/github-copilot/
+.config/nvim-bak/
+.config/simple-update-notifier/
+.config/zed/
