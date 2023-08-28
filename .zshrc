@@ -387,3 +387,5 @@ export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 
 # Enable asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+source ~/.api_tz_dont_delete

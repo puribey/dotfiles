@@ -1,9 +1,5 @@
-require('rose-pine').setup({
-    disable_background = true
-})
-
 function ApplyColorScheme(color)
-	color = color or "rose-pine"
+  color = color or "catppuccin-mocha"
 	vim.cmd.colorscheme(color)
 end
 

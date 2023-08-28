@@ -11,15 +11,15 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
 
-  -- use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
@@ -44,13 +44,6 @@ return require('packer').startup(function(use)
   use('nvim-tree/nvim-tree.lua')
 
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end,
-  }
 
   use({
       "folke/trouble.nvim",
@@ -69,4 +62,11 @@ return require('packer').startup(function(use)
   end}
 
   use('github/copilot.vim')
+
+  use ({
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  })
+
+  use({'christoomey/vim-tmux-navigator', lazy = false })
 end)

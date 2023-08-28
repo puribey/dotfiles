@@ -188,3 +188,4 @@ bin/terraform
 .config/nvim-bak/
 .config/simple-update-notifier/
 .config/zed/
+.config/tmux/plugins/
