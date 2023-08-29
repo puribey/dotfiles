@@ -50,15 +50,16 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 vim.keymap.set("n", "<leader><leader>", "<C-^>")
+vim.keymap.set("n", ",,", "<C-^>")
 
-vim.keymap.set("n", "<Left>", ":echo no!<CR>")
-vim.keymap.set("i", "<Left>", ":echo no!<CR>")
+-- Be a good vim user, do not use directional keys
+vim.keymap.set("n", "<Left>", function() print("no!") end)
+vim.keymap.set("i", "<Left>", function() print("no!") end)
+vim.keymap.set("n", "<Right>", function() print("no!") end)
+vim.keymap.set("i", "<Right>", function() print("no!") end)
+vim.keymap.set("n", "<Up>", function() print("no!") end)
+vim.keymap.set("i", "<Up>", function() print("no!") end)
+vim.keymap.set("n", "<Down>", function() print("no!") end)
+vim.keymap.set("i", "<Down>", function() print("no!") end)
 
-vim.keymap.set("n", "<Right>", ":echo no!<CR>")
-vim.keymap.set("i", "<Right>", ":echo no!<CR>")
-vim.keymap.set("n", "<Up>", ":echo no!<CR>")
-vim.keymap.set("i", "<Up>", ":echo no!<CR>")
-vim.keymap.set("n", "<Down>", ":echo no!<CR>")
-vim.keymap.set("i", "<Down>", ":echo no!<CR>")
-
-vim.keymap.set("n", "<leader>b", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>b", ":NvimTreeToggle<cr>")
