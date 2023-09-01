@@ -7,8 +7,6 @@ export EDITOR=$MAIN_EDITOR
 export VISUAL=$EDITOR
 export LSCOLORS='exfxcxdxbxegedabagacad'
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
-# export PROMPT='%~$(git-prompt-info)$ '
-# export PROMPT='$(git-prompt-info) '
 export WORDCHARS='*?_[]~=&;!#$%^(){}'
 export FZF_DEFAULT_OPTS='--reverse --color="info:#000000,spinner:#000000" --prompt="  "'
 export HISTFILE="$HOME/.history"
@@ -39,12 +37,8 @@ export CPPFLAGS="-I/usr/local/opt/libffi/include"
 
 export ANDROID_HOME=/Users/gianu/Library/Android/sdk
 export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
-export GOPATH=/Users/gianu/work/go
-# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home/
 
-# export PATH=/usr/local/heroku/bin
 export PATH=$PATH:/Users/gianu/bin
-# export PATH=$PATH:/Users/gianu/.cabal/bin
 export PATH=$PATH:$HOME/.bin
 export PATH=$PATH:./node_modules/.bin
 export PATH=$PATH:/usr/local/bin
@@ -53,13 +47,10 @@ export PATH=$PATH:/bin
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:/sbin
 export PATH=$PATH:/usr/local/git/bin
-export PATH=$PATH:/usr/local/go/bin
-# export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
 export PATH=$PATH:${GOPATH}/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/opt/homebrew/bin
 export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
-# export PATH=$PATH:/Users/gianu/Library/flutter/bin
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
