@@ -24,7 +24,7 @@ vim.g.bufferline = {
   -- Enable/disable icons
   -- if set to 'numbers', will show buffer index in the tabline
   -- if set to 'both', will show buffer index and icons in the tabline
-  icons = true,
+  icons = { filetype = { enabled = true } },
 
   -- If set, the icon color will follow its corresponding buffer
   -- highlight group. By default, the Buffer*Icon group is linked to the
@@ -96,9 +96,9 @@ map('n', 'gq', ':BufferClose<CR>', opts)
 -- Magic buffer-picking mode
 map('n', '<leader>bp', ':BufferPick<CR>', opts)
 -- Sort automatically> by...
-map('n', '><Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
-map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
+-- map('n', '><Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
+-- map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
+-- map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)

@@ -11,4 +11,4 @@ require("nvim-tree").setup({
   },
 })
 
-map('n', '<leader>bn', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>bn', ':NvimTreeToggle<CR>')
