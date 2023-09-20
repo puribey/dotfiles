@@ -1,7 +1,0 @@
-#!/bin/bash
-
-GRAPH_RDS_HOST="graph.cluster-cieeljuzwsdg.us-east-1.rds.amazonaws.com"
-GRAPH_RDS_TOKEN="$(aws rds generate-db-auth-token --hostname $GRAPH_RDS_HOST --port 3306 --region us-east-1 --username rds_master )" # This token lasts for 15 minutes, so you may need to reload your .bash_profile before you log in with the token
-
-mysql --host=$GRAPH_RDS_HOST --port=3306 --ssl-ca=~/.ssh/rds-combined-ca-bundle.pem --enable-cleartext-plugin --user=rds_master --password=$GRAPH_RDS_TOKEN
-
