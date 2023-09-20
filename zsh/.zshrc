@@ -51,7 +51,7 @@ export PATH=$PATH:${GOPATH}/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/opt/homebrew/bin
 export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
-export PATH=$PATH/$HOME/.local/scripts
+export PATH=$PATH:/$HOME/.local/scripts
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
