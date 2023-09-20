@@ -1,0 +1,47 @@
+{
+  "license_key": "",
+  "access_token": "",
+  "full_name": "",
+  "user_id": "",
+  "shopify_user_id": "",
+  "email": "",
+  "last_profile": "Default",
+  "resolution": [
+    1280,
+    720
+  ],
+  "vcam_bg": "",
+  "gpu_id": "",
+  "custom_frame": "None",
+  "referral_link": "",
+  "referral_code": "",
+  "ux": {
+    "auto_hide_preview_enabled": true,
+    "auto_hide_preview_hint_shown": false,
+    "open_for_each_call_enabled": true,
+    "open_for_each_call_hint_shown": false,
+    "open_keyboard_for_each_call_enabled": true,
+    "save_profile_hint_shown": false,
+    "tray_hint_shown": false,
+    "run_on_startup": false,
+    "background_app": false,
+    "led_off_when_used": false,
+    "first_impression_shown": true,
+    "vcam_32bit_warning_enabled": true,
+    "res_change_warning_enabled": true,
+    "disconnect_warning_enabled": true,
+    "enable_upload_log_on_crash_enabled": true,
+    "show_feedback_every_given_week": 1,
+    "plus_notification_enabled": true,
+    "auto_start_app_enabled": false,
+    "force_tutorial_state": false
+  },
+  "name_overlay": {
+    "enabled": false,
+    "name": "",
+    "subtitle": "Lumina User",
+    "logo_path": "",
+    "position": "BL"
+  },
+  "popup_shown": null
+}

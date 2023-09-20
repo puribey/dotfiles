@@ -1,0 +1,36 @@
+Arguments: 
+  /Users/gianu/.fnm/node-versions/v20.5.1/installation/bin/node /opt/homebrew/bin/yarn install --pure-lockfile --mutex network
+
+PATH: 
+  /Users/gianu/.asdf/shims:/opt/homebrew/opt/asdf/libexec/bin:/opt/homebrew/opt/sqlite/bin:/Users/gianu/Library/pnpm:/usr/local/opt/openjdk/bin:/Users/gianu/Library/Caches/fnm_multishells/37338_1691604089510/bin:/usr/local/opt/terraform@0.13/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/gianu/.cargo/bin:/opt/homebrew/opt/sqlite/bin:/Users/gianu/Library/pnpm:/usr/local/opt/openjdk/bin:/Users/gianu/Library/Caches/fnm_multishells/37289_1691604089194/bin:/usr/local/opt/terraform@0.13/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/homebrew/opt/sqlite/bin:/Users/gianu/Library/pnpm:/usr/local/opt/openjdk/bin:/Users/gianu/Library/Caches/fnm_multishells/3589_1691592674159/bin:/usr/local/opt/terraform@0.13/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/gianu/.cargo/bin:/Users/gianu/Library/Caches/fnm_multishells/2811_1691592673083/bin:/Users/gianu/bin:/Users/gianu/.bin:./node_modules/.bin:/usr/local/git/bin:/Users/gianu/work/go/bin:/Users/gianu/.local/bin:/Users/gianu/bin:/Users/gianu/.bin:./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:/Users/gianu/work/go/bin:/Users/gianu/.cargo/bin:/opt/homebrew/bin:/Users/gianu/.local/bin:/Users/gianu/bin:/Users/gianu/.bin:./node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:/Users/gianu/work/go/bin:/Users/gianu/.cargo/bin:/opt/homebrew/bin:/Users/gianu/.local/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  20.5.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  TypeError: /Users/gianu/work/classdojo/api/node_modules/@datadog/pprof: Cannot read properties of undefined (reading 'getOption')
+      at Config.getOption (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:40808:38)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:34340:28
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:328:14
+      at new Promise (<anonymous>)
+      at new F (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:5301:28)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:307:12
+      at makeEnv (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:34566:18)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:34580:21
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
