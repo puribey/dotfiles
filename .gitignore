@@ -189,3 +189,4 @@ bin/terraform
 .config/simple-update-notifier/
 .config/zed/
 .config/tmux/plugins/
+.zshrc-private

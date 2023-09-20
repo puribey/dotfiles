@@ -205,9 +205,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
-zle -N fancy-ctrl-z;
-bindkey '^z' fancy-ctrl-z
-
 zle -N exit-shell
 bindkey '^Sx' exit-shell
 
@@ -219,43 +216,6 @@ bindkey -M paste '^[[201~' end-paste
 zle -N paste-insert paste-insert
 bindkey -R -M paste "^@"-"\M-^?" paste-insert
 bindkey -M paste -s '^M' '^J'
-
-# bindkey -M emacs 'â' backward-word
-# bindkey -M emacs 'æ' forward-word
-# bindkey -M emacs 'ä' kill-word
-# bindkey -M menuselect 'æ' menu-complete
-# bindkey -M menuselect 'â' reverse-menu-complete
-# bindkey '®' insert-last-word
-
-#################
-### Functions ###
-#################
-
-# git-prompt-info() {
-#   git rev-parse --is-inside-work-tree &>/dev/null
-#
-#   if [[ $? -eq 0 ]]; then
-#     echo "[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%} $(current-git-branch) $(git-dirty)%{$reset_color%}]$"
-#   else
-#     echo "[%{$fg_bold[white]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%} %{$fg[cyan]%}%c%{$reset_color%}]$"
-#   fi
-#
-#   # echo " %F{green}($(current-git-branch)%f $(git-dirty)%F{green})%f"
-#
-# }
-#
-# current-git-branch() {
-#   git symbolic-ref --short -q HEAD
-# }
-#
-# git-dirty() {
-#   test -z "$(command git status --porcelain --ignore-submodules -unormal)"
-#   if [[ $? -eq 1 ]]; then
-#     echo '%F{red}✗%f'
-#   else
-#     echo '%F{green}✔%f'
-#   fi
-# }
 
 expand-or-complete-with-waiting-dots() {
   echo -n "\e[31m......\e[0m"
@@ -276,16 +236,6 @@ searchi () {
         fi
 }
 
-# fancy-ctrl-z() {
-#   if [[ $#BUFFER -eq 0 ]]; then
-#     BUFFER="fg"
-#     zle accept-line
-#   else
-#     zle push-input
-#     zle clear-screen
-#   fi
-# }
-#
 exit-shell() {
   exit
 }
@@ -304,23 +254,6 @@ paste-insert() {
   _paste_content+=$KEYS
 }
 
-
-# activate_virtualenv() {
-#   if [ -f env/bin/activate ]; then . env/bin/activate;
-#   elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
-#   elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
-#   elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
-#   elif [ -f ./bin/activate ]; then . ./bin/activate;
-#   fi
-# }
-
-# function whodoneit() {
-#   (set -e &&
-#     for x in $(git grep -I --name-only $1); do
-#       git blame -f -- $x | grep $1;
-#     done
-#   )
-# }
 
 function chtitle {
     echo -ne "\033]0;"$*"\007"
