@@ -21,6 +21,7 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[00;47;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+export LESS=eFRX
 export GREP_OPTIONS='--color=always'
 export GREP_COLOR='1;35;40'
 export HOMEBREW_NO_ANALYTICS=1
@@ -218,7 +219,7 @@ zle -N paste-insert paste-insert
 bindkey -R -M paste "^@"-"\M-^?" paste-insert
 bindkey -M paste -s '^M' '^J'
 
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^s "tmux-sessionizer\n"
 
 expand-or-complete-with-waiting-dots() {
   echo -n "\e[31m......\e[0m"
