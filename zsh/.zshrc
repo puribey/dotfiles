@@ -218,6 +218,8 @@ zle -N paste-insert paste-insert
 bindkey -R -M paste "^@"-"\M-^?" paste-insert
 bindkey -M paste -s '^M' '^J'
 
+bindkey -s ^f "tmux-sessionizer\n"
+
 expand-or-complete-with-waiting-dots() {
   echo -n "\e[31m......\e[0m"
   zle expand-or-complete
