@@ -1,7 +1,6 @@
 [user]
-  name = Sergio Rafael Gianazza
-  email = sergio@gianu.me
-  # signingkey = F0D3E6F5
+  name = Priscila Bey
+	email = pri.bey@gmail.com
 [diff]
 	noprefix = true
 [color]
@@ -45,7 +44,6 @@
 
   r = !git l -30
   ra = !git r --all
-  l = "!source ~/.githelpers && pretty_git_log"
   la = !git l --all
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
@@ -58,18 +56,13 @@
     }; gitundo"
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
-[merge]
-  tool = vimdiff
 [core]
-  editor = /usr/local/bin/nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [i18n]
 	logOutputEncoding = UTF-8
 	commitencoding = UTF-8
 [github]
-	user = gianu
-[ghi]
-	token = !security find-internet-password -a gianu -s github.com -l 'ghi token' -w
+	user = puribey
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52

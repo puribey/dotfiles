@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Compress the javascript provided as a parameter
-#
-# compress_js myfile myfile-minified
-
-java -jar /Library/Developer/javascript/yuicompressor-2.4.7.jar $1 -o $2 --charset utf-8

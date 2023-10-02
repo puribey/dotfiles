@@ -1,319 +1,137 @@
-#############################
-### Environment variables ###
-#############################
+# If you come from bash you might have to change your $PATH.
+export PATH=$PATH:/Users/puribey/bin
 
-export MAIN_EDITOR="nvim"
-export EDITOR=$MAIN_EDITOR
-export VISUAL=$EDITOR
-export LSCOLORS='exfxcxdxbxegedabagacad'
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:'
-export WORDCHARS='*?_[]~=&;!#$%^(){}'
-export FZF_DEFAULT_OPTS='--reverse --color="info:#000000,spinner:#000000" --prompt="  "'
-export HISTFILE="$HOME/.history"
-export HISTSIZE=100000
-export SAVEHIST=$HISTSIZE
-export PAGER=less
-export GIT_PAGER='less -F -X'
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[00;47;30m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-export LESS=eFRX
-export GREP_OPTIONS='--color=always'
-export GREP_COLOR='1;35;40'
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_AUTO_UPDATE=1
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-export ACK_COLOR_MATCH='red'
-export WORDCHARS='*?[]~&;!$%^<>'
-export GO111MODULE=""
-export GOPROXY=direct
-export GOSUMDB=off
-export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
-export LDFLAGS="-L/usr/local/opt/libffi/lib"
-export CPPFLAGS="-I/usr/local/opt/libffi/include"
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/puribey/.oh-my-zsh"
 
-export ANDROID_HOME=/Users/gianu/Library/Android/sdk
-export PTYHON_HOME=/usr/local/Cellar/python/2.7.6
+# Path to yarn global bin
+export PATH=$PATH:/Users/puribey/.yarn
 
-export PATH=$PATH:/Users/gianu/bin
-export PATH=$PATH:$HOME/.bin
-export PATH=$PATH:./node_modules/.bin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/sbin
-export PATH=$PATH:/usr/local/git/bin
-export PATH=$PATH:${GOPATH}/bin
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:/opt/homebrew/bin
-export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
-export PATH=$PATH:$HOME/.local/scripts
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="gianu"
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-#############################
-### General configuration ###
-#############################
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-setopt no_beep
-setopt interactive_comments
-setopt prompt_subst
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
 
-setopt auto_cd
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushd_minus
-setopt pushd_silent
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-setopt append_history
-setopt inc_append_history
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_all_dups
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt share_history
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
-setopt hup
-setopt long_list_jobs
-setopt notify
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-autoload -U compinit
-compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*:default' list-colors ''
-# case-insensitive, partial-word, and then substring completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' completer _complete _approximate
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-autoload -U promptinit; promptinit
-prompt pure
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
-############################
-### Aliases              ###
-############################
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# alias ls='exa' #-G
-# alias ps='procs'
-# alias cat='bat'
-# alias less='bat'
-# alias grep='ripgrep'
-# alias rg='ripgrep'
-# alias nano='kibi'
-# alias find='fd'
-# alias du='dust'
-# alias time='hyperfine"
-# alias top='ytop'
-alias iftop='bandwhich'
-# alias hexdump='hx'
-# alias objdump='bingrep'
-# alias http-server='miniserve'
-# alias license='licensor'
-
-# alias ls='ls -G --color'
-alias ls='ls -G'
-alias ll='ls -lG'
-
-alias lzd='lazydocker'
-
-# alias pb='kaizoku'
-
-alias yi='yarn install --pure-lockfile --mutex network'
-alias yd='yarn dev'
-
-alias mt='mix test'
-
-# alias ssh="TERM=xterm-256color ssh"
-
-alias vi="nvim"
-alias vim="nvim"
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-
-alias python="python3"
-
-alias grep="grep --color"
-alias fu="fnm use"
-alias fuyi="fnm use && yarn install --pure-lockfile --mutex network"
-alias mkt="make test-watch"
-alias pi="pnpm install"
-
-## Kubectl aliases for ClassDojo ##
-alias kctl-west-prod='kubectl --context="aws/us-west-1-external"'
-
-#############################
-### Plugins configuration ###
-#############################
-
-autoload -U colors && colors
-
-####################
-### Key bindings ###
-####################
-bindkey -e
-
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
-bindkey '^b' backward-char
-bindkey '^f' forward-char
-bindkey '\eb' backward-word
-bindkey '\ef' forward-word
-bindkey '\ed' kill-word
-bindkey '^k' kill-line
-bindkey '^d' delete-char
-bindkey '\ew' backward-kill-word
-bindkey '^u' backward-kill-line
-bindkey '^r' history-incremental-search-backward
-
-autoload -U up-line-or-beginning-search
-zle -N up-line-or-beginning-search
-bindkey '^[[A' up-line-or-beginning-search
-bindkey '^p' up-line-or-beginning-search
-
-autoload -U down-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey '^[[B' down-line-or-beginning-search
-bindkey '^n' down-line-or-beginning-search
-
-zmodload zsh/complist
-bindkey -M menuselect '^e' accept-line
-bindkey -M menuselect '\ef' menu-complete
-bindkey -M menuselect '\eb' reverse-menu-complete
-bindkey -M menuselect '^[[Z' reverse-menu-complete
-
-zle -N insert-last-command-output
-bindkey '^x^l' insert-last-command-output
-
-autoload -U copy-earlier-word
-zle -N copy-earlier-word
-bindkey '^[m' copy-earlier-word
-
-zle -N expand-or-complete-with-waiting-dots
-bindkey '^i' expand-or-complete-with-waiting-dots
-
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^x^e' edit-command-line
-
-zle -N exit-shell
-bindkey '^Sx' exit-shell
-
-bindkey -N paste
-zle -N start-paste
-bindkey '^[[200~' start-paste
-zle -N end-paste
-bindkey -M paste '^[[201~' end-paste
-zle -N paste-insert paste-insert
-bindkey -R -M paste "^@"-"\M-^?" paste-insert
-bindkey -M paste -s '^M' '^J'
-
-bindkey -s ^s "tmux-sessionizer\n"
-
-expand-or-complete-with-waiting-dots() {
-  echo -n "\e[31m......\e[0m"
-  zle expand-or-complete
-  zle redisplay
-}
-
-insert-last-command-output() {
-  LBUFFER+="$(eval $history[$((HISTCMD-1))])"
-}
-
-searchi () {
-        selected_line=$(sk --ansi -i -c 'rg -i --line-number --color=always "{}"')
-        split_lines=("${(@s/:/)selected_line}")
-        if [[ ${#split_lines} > 1 ]]
-        then
-                nvim +${split_lines[2]} "${split_lines[1]}"
-        fi
-}
-
-exit-shell() {
-  exit
-}
-
-start-paste() {
-  bindkey -A paste main
-}
-
-end-paste() {
-  bindkey -e
-  LBUFFER+=$_paste_content
-  unset _paste_content
-}
-
-paste-insert() {
-  _paste_content+=$KEYS
-}
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
 
 
-function chtitle {
-    echo -ne "\033]0;"$*"\007"
-}
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+git
+# zsh-syntax-highlighting
+zsh-autosuggestions
+)
 
-function ecrlogin() {
-  aws ecr get-login-password \
-    --region us-east-1 \
-| docker login \
-    --username AWS \
-    --password-stdin 347708466071.dkr.ecr.us-east-1.amazonaws.com
-}
+source $ZSH/oh-my-zsh.sh
+typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
 
-# Mob scripts
+# User configuration
 
-function mob-start() {
-  if [ -z "$1" ]; then
-    echo "You must provide a name for the branch."
-    echo "eg.: mob-start my_branch 5"
-    return 1
-  fi
+# export MANPATH="/usr/local/man:$MANPATH"
 
-  if [ -z "$2" ]; then
-    echo "You must provide a time for the duration of the mob round."
-    echo "eg.: mob-start my_branch 5"
-    return 2
-  fi
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-  git checkout -b "$1" && git push origin "$1" --set-upstream --no-verify && mob start --include-uncommitted-changes $2;
-}
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-#############
-### Other ###
-#############
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-. $HOME/.zshrc-private
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export HOMEBREW_GITHUB_API_TOKEN=e7856e24063fa6c4766e9eb024abc7c45832e51f
+export AWS_REGION=us-east-1
 
-eval "$(fnm env)"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
-ulimit -n 10240
+export NOMAD_ADDR=https://nomad.internal.classdojo.com
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+# use fnm with zsh
+eval "$(fnm env --use-on-cd)"
+source /Users/puribey/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# M1 native homebrew is be under/opt/homebrew/cell/instead of linking to/usr/local/include
+export CPLUS_INCLUDE_PATH=/opt/homebrew/include
 
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export API_PARALLEL_TEST_CONCURRENCY=3
+
+# To use React Native use same token as github
+export GITHUB_TOKEN=777a2af13a6c170cdd7f38a75f64d2f8a469fb89
 
 # pnpm
-export PNPM_HOME="/Users/gianu/Library/pnpm"
+export PNPM_HOME="/Users/puribey/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-export PATH="$PATH:/Users/gianu/.local/bin"
 # pnpm end
-export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
-
-# Enable asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
 source ~/.api_tz_dont_delete
